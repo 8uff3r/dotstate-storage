@@ -1,0 +1,13 @@
+[Unit]
+Description=Kanata Layer Switcher
+PartOf=kanata.service
+After=kanata.service
+
+[Service]
+ExecStart=%h/.local/bin/kana-switch -q
+Restart=on-failure
+RestartSec=5
+Type=simple
+
+[Install]
+WantedBy=graphical-session.target

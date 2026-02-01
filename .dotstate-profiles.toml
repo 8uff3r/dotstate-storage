@@ -21,10 +21,12 @@ synced_files = [
     ".config/quickshell",
     ".config/rofi",
     ".config/starship.toml",
+    ".config/systemd/user",
     ".config/tmux",
     ".config/waybar",
     ".config/wezterm",
     ".config/wofi",
     ".config/zed",
+    ".config/zellij",
 ]
 packages = []
