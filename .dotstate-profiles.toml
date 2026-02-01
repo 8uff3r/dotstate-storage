@@ -4,11 +4,18 @@ synced_files = []
 [[profiles]]
 name = "Personal"
 synced_files = [
+    ".config/doom",
     ".config/fish",
     ".config/foot",
     ".config/fuzzel",
     ".config/helix",
+    ".config/hypr",
+    ".config/kanata",
+    ".config/keyd",
+    ".config/kglobalshortcutsrc",
     ".config/kitty",
+    ".config/mako",
+    ".config/niri",
     ".config/nvim",
     ".config/opencode",
     ".config/quickshell",
