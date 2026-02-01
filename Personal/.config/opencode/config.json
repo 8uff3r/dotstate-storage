@@ -1,0 +1,33 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "permission": {
+    "*": "allow"
+  },
+  "keybinds": {
+    "command_list": "ctrl+/"
+  },
+  "provider": {
+    "nanogpt": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "NanoGPT",
+      "options": {
+        "baseURL": "https://nano-gpt.com/api/v1",
+        "apiKey": "{env:NANOGPT_API_KEY}"
+      },
+      "models": {
+        "zai-org/glm-4.7": {
+          "name": "GLM 4.7"
+        },
+        "moonshotai/kimi-k2.5": {
+          "name": "Kimi K2.5"
+        },
+        "moonshotai/kimi-k2.5:thinking": {
+          "name": "Kimi K2.5 Thinking"
+        },
+        "qwen/qwen3-coder": {
+          "name": "Qwen 3 Coder 480B"
+        }
+      }
+    }
+  }
+}

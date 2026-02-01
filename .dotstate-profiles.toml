@@ -3,5 +3,21 @@ synced_files = []
 
 [[profiles]]
 name = "Personal"
-synced_files = []
+synced_files = [
+    ".config/fish",
+    ".config/foot",
+    ".config/fuzzel",
+    ".config/helix",
+    ".config/kitty",
+    ".config/nvim",
+    ".config/opencode",
+    ".config/quickshell",
+    ".config/rofi",
+    ".config/starship.toml",
+    ".config/tmux",
+    ".config/waybar",
+    ".config/wezterm",
+    ".config/wofi",
+    ".config/zed",
+]
 packages = []

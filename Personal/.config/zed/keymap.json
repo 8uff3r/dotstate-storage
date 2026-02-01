@@ -1,0 +1,164 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "bindings": {
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "alt-enter": "workspace::NewTerminal",
+      "ctrl-'": "workspace::ToggleBottomDock",
+      "ctrl-w": "pane::CloseActiveItem",
+      "alt-.": "vim::ResizePaneRight",
+      "alt-,": "vim::ResizePaneLeft",
+    },
+  },
+  {
+    "context": "!GitPanel && Editor",
+    "bindings": {
+      "alt-k": "editor::MoveLineUp",
+      "alt-j": "editor::MoveLineDown",
+    },
+  },
+  {
+    "context": "GitPanel",
+    "bindings": {
+      "alt-j": "git_panel::FocusEditor",
+      "alt-k": "git_panel::FocusChanges",
+    },
+  },
+  {
+    "context": "(VimControl && !Terminal) || (menu && !showing_completions && !edit_prediction) || EmptyPane",
+    "bindings": {
+      "space space": "file_finder::Toggle",
+      "space b r": "pane::CloseItemsToTheRight",
+      "space b l": "pane::CloseItemsToTheLeft",
+      "space b d": "pane::CloseActiveItem",
+      "space b o": "pane::CloseOtherItems",
+      "space w v": "pane::SplitVertical",
+      "space w s": "pane::SplitHorizontal",
+      "space p p": "projects::OpenRecent",
+      "space g g": "git_panel::ToggleFocus",
+      "space l r": "editor::RestartLanguageServer",
+      "space o": "outline::Toggle",
+      "space e": "workspace::ToggleLeftDock",
+      "space s f": ["task::Spawn", { "task_name": "file_finder", "reveal_target": "center" }],
+      "space s g": ["task::Spawn", { "task_name": "fulltext_search", "reveal_target": "center" }],
+      "shift-x": "vim::Exchange",
+    },
+  },
+  {
+    "context": "VimControl && Editor",
+    "bindings": {
+      "s": "vim::PushSneak",
+      "H": "pane::ActivatePreviousItem",
+      "L": "pane::ActivateNextItem",
+    },
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "ctrl-alt-shift-h": null,
+      "ctrl-r": "search::ToggleReplace",
+    },
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-h": "pane::ActivatePreviousItem",
+      "ctrl-l": "pane::ActivateNextItem",
+      "alt-w v": "pane::SplitVertical",
+      "alt-w s": "pane::SplitHorizontal",
+    },
+  },
+  {
+    "context": "Editor && !menu",
+    "bindings": {
+      "ctrl-c": "editor::Copy", // vim default: return to normal mode
+      "ctrl-x": "editor::Cut", // vim default: decrement
+      "ctrl-s": "workspace::Save", // vim default: show signature
+      "ctrl-a": "editor::SelectAll", // vim default: increment
+    },
+  },
+  {
+    "context": "vim_mode == visual",
+    "bindings": {
+      "shift-s": "vim::PushAddSurrounds",
+    },
+  },
+  // {
+  //   "context": "VimControl && !menu && vim_mode != operator",
+  //   "bindings": {
+  //     "w": "vim::NextSubwordStart",
+  //     "b": "vim::PreviousSubwordStart",
+  //     "e": "vim::NextSubwordEnd",
+  //     "g e": "vim::PreviousSubwordEnd"
+  //   }
+  // },
+  {
+    "context": "vim_operator == c",
+    "bindings": {
+      "s": "vim::PushChangeSurrounds",
+    },
+  },
+  {
+    "context": "vim_operator == y",
+    "bindings": {
+      "s": "vim::PushAddSurrounds",
+    },
+  },
+  {
+    "context": "vim_operator == d",
+    "bindings": {
+      "s": "vim::PushDeleteSurrounds",
+    },
+  },
+  {
+    "context": "vim_mode == insert && Editor",
+    "bindings": {
+      "alt-h": "editor::NextEditPrediction",
+      "alt-g": "editor::PreviousEditPrediction",
+      "alt-;": "editor::AcceptEditPrediction",
+    },
+  },
+  {
+    "context": "multibuffer",
+    "bindings": {
+      "alt-f": "search::FocusSearch",
+    },
+  },
+  {
+    "context": "(VimControl && !menu)",
+    "bindings": {
+      "j": [
+        "vim::Down",
+        {
+          "display_lines": true,
+        },
+      ],
+    },
+  },
+  {
+    "context": "(VimControl && !menu)",
+    "bindings": {
+      "k": [
+        "vim::Up",
+        {
+          "display_lines": true,
+        },
+      ],
+    },
+  },
+  {
+    "context": "AgentPanel || vim_mode == insert",
+    "bindings": {
+      "ctrl-v": "editor::Paste",
+    },
+  },
+]
