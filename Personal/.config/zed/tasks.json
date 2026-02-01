@@ -2,16 +2,17 @@
 [
   {
     "label": "file_finder",
-    "command": "zeditor \"$(tv files)\"",
+    "command": "zed \"$(tv files)\"",
     "hide": "always",
     "allow_concurrent_runs": true,
-    "use_new_terminal": true
+    "use_new_terminal": true,
   },
+
   {
     "label": "fulltext_search",
-    "command": "zeditor \"$(tv text)\"",
+    "command": "zed \"$(~/.config/zed/lrg.sh)\"",
     "hide": "always",
     "allow_concurrent_runs": true,
-    "use_new_terminal": true
-  }
+    "use_new_terminal": true,
+  },
 ]
