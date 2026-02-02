@@ -131,7 +131,7 @@
     "favorite_models": [],
     "default_model": {
       "provider": "nano",
-      "model": "moonshotai/kimi-k2.5:thinking",
+      "model": "moonshotai/kimi-k2.5",
     },
     "dock": "right",
     "expand_edit_card": false,

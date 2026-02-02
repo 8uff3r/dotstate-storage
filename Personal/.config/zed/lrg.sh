@@ -10,7 +10,7 @@ lg() {
         --delimiter ':' \
         --preview 'bat --color=always --style=numbers --highlight-line {2}:{2} {1}' \
         --preview-window '+{2}-5' \
-        --bind "enter:execute(${EDITOR:-vim} {1} +{2})"
+#        --bind "enter:execute(${EDITOR:-vim} {1} +{2})"
 }
 
 lg "$@"
