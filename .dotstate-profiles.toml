@@ -15,6 +15,7 @@ synced_files = [
     ".config/kglobalshortcutsrc",
     ".config/kitty",
     ".config/mako",
+    ".config/mimeapps.list",
     ".config/niri",
     ".config/nvim",
     ".config/opencode",
