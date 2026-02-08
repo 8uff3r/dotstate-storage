@@ -211,6 +211,11 @@
             "max_output_tokens": 1000000,
           },
           {
+            "name": "huihui-ai/DeepSeek-R1-Distill-Qwen-32B-abliterated",
+            "display_name": "Deepseek R1 Qwen Abliterated",
+            "max_tokens": 33000,
+          },
+          {
             "name": "zai-org/glm-4.7",
             "display_name": "GLM 4.7",
             "max_tokens": 1000000,

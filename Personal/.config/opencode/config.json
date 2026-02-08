@@ -26,6 +26,25 @@
         },
         "qwen/qwen3-coder": {
           "name": "Qwen 3 Coder 480B"
+        },
+        "Gemma-3-27B-Nidum-Uncensored": {
+          "name": "Gemma 3 27B Nidum Uncensored"
+        },
+        "Gemma-3-27B-it-Abliterated": {
+          "name": "Gemma 3 27B IT Abliterated"
+        }
+      }
+    },
+    "lmstudio": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "LmStudio",
+      "options": {
+        "baseURL": "http://127.0.0.1:2323/v1"
+
+      },
+      "models": {
+        "gemma-3-12b-it-heretic": {
+          "name": "Gemma 3-12b-heretic"
         }
       }
     }
