@@ -9,8 +9,7 @@ lg() {
         --bind "change:reload:$RG_PREFIX {q} || true" \
         --delimiter ':' \
         --preview 'bat --color=always --style=numbers --highlight-line {2}:{2} {1}' \
-        --preview-window '+{2}-5' \
-#        --bind "enter:execute(${EDITOR:-vim} {1} +{2})"
+        --preview-window '+{2}-5'  | cut -d: -f1,2,3
 }
 
 lg "$@"

@@ -7,6 +7,30 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "terminal": {
+    "font_family": "Hack Nerd Font Mono",
+    "font_fallbacks": ["Vazir Code Hack"],
+    "font_features": { "calt": true, "cv01": true },
+    "shell": {
+      "program": "fish",
+    },
+  },
+  "vim_mode": true,
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+  "base_keymap": "VSCode",
+  "ui_font_size": 16,
+  "ui_font_family": "GeistMono Nerd Font",
+  "buffer_font_family": "GeistMono Nerd Font",
+  "buffer_font_size": 16,
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "Ayu Dark",
+  },
+
   "session": {
     "trust_all_worktrees": true,
   },
@@ -21,28 +45,6 @@
     "enabled": false,
     "vue-language-server": false,
   },
-  "ssh_connections": [
-    {
-      "host": "5.230.54.210",
-      "username": "root",
-      "args": [],
-      "projects": [
-        {
-          "paths": ["/root"],
-        },
-      ],
-    },
-    {
-      "host": "185.231.181.103",
-      "username": "ubuntu",
-      "args": [],
-      "projects": [
-        {
-          "paths": ["/home/ubuntu"],
-        },
-      ],
-    },
-  ],
   "soft_wrap": "preferred_line_length",
   "preferred_line_length": 110,
   "diagnostics": {
@@ -57,7 +59,49 @@
   "restore_on_file_reopen": true,
   "close_on_file_delete": false,
   "icon_theme": "Colored Zed Icons Theme Dark",
+
+  "agent_servers": {
+    "kimi": {
+      "type": "registry",
+    },
+    "qwen-code": {
+      "type": "registry",
+    },
+  },
+  "agent": {
+    "favorite_models": [],
+    "default_model": {
+      "provider": "nano",
+      "model": "minimax/minimax-m2.5",
+    },
+    "dock": "right",
+    "expand_edit_card": false,
+    "use_modifier_to_send": false,
+    "enable_feedback": true,
+    "default_profile": "minimal",
+    "always_allow_tool_actions": true,
+  },
   "lsp": {
+    "oxlint": {
+      "initialization_options": {
+        "settings": {
+          "configPath": null,
+          "run": "onType",
+          "disableNestedConfig": false,
+          "fixKind": "safe_fix",
+          "typeAware": true,
+          "unusedDisableDirectives": "deny",
+        },
+      },
+    },
+    "oxfmt": {
+      "initialization_options": {
+        "settings": {
+          "configPath": null,
+          "run": "onSave",
+        },
+      },
+    },
     "vtsls": {
       "settings": {
         // For TypeScript:
@@ -83,11 +127,6 @@
         "arguments": ["language-server", "--protocol=lsp"],
       },
     },
-    "biome": {
-      "settings": {
-        "require_config_file": true,
-      },
-    },
     "vscode-css-language-server": {
       "settings": {
         "css": {
@@ -99,63 +138,114 @@
     },
   },
   "languages": {
+    "CSS": {
+      "format_on_save": "on",
+      "prettier": {
+        "allowed": false,
+      },
+      "formatter": [
+        {
+          "language_server": {
+            "name": "oxfmt",
+          },
+        },
+      ],
+    },
+    "YAML": {
+      "format_on_save": "on",
+      "prettier": {
+        "allowed": false,
+      },
+      "formatter": [
+        {
+          "language_server": {
+            "name": "oxfmt",
+          },
+        },
+      ],
+    },
+    "Markdown": {
+      "format_on_save": "on",
+      "prettier": {
+        "allowed": false,
+      },
+      "formatter": [
+        {
+          "language_server": {
+            "name": "oxfmt",
+          },
+        },
+      ],
+    },
+    "HTML": {
+      "format_on_save": "on",
+      "prettier": {
+        "allowed": false,
+      },
+      "formatter": [
+        {
+          "language_server": {
+            "name": "oxfmt",
+          },
+        },
+      ],
+    },
+    "JavaScript": {
+      "format_on_save": "on",
+      "prettier": {
+        "allowed": false,
+      },
+      "formatter": [
+        {
+          "language_server": {
+            "name": "oxfmt",
+          },
+        },
+        {
+          "code_action": "source.fixAll.oxc",
+        },
+      ],
+    },
+    "JSON": {
+      "format_on_save": "on",
+      "prettier": {
+        "allowed": false,
+      },
+      "formatter": [
+        {
+          "language_server": {
+            "name": "oxfmt",
+          },
+        },
+      ],
+    },
+    "TypeScript": {
+      "format_on_save": "on",
+      "prettier": {
+        "allowed": false,
+      },
+      "formatter": [
+        {
+          "language_server": {
+            "name": "oxfmt",
+          },
+        },
+      ],
+    },
     "Vue.js": {
-      "tab_size": 2,
-      // "language_servers": ["!biome", "!vtsls", "..."],
-      "formatter": "prettier",
+      "format_on_save": "on",
+      "prettier": {
+        "allowed": false,
+      },
+      "formatter": [
+        {
+          "language_server": {
+            "name": "oxfmt",
+          },
+        },
+      ],
     },
   },
-  "terminal": {
-    "font_family": "Hack Nerd Font Mono",
-    "font_fallbacks": ["Vazir Code Hack"],
-    "font_features": { "calt": true, "cv01": true },
-    "shell": {
-      "program": "fish",
-    },
-  },
-  "agent_servers": {
-    "qwen-code": {
-      "type": "registry",
-    },
-    "opencode": {
-      "type": "registry",
-    },
-    "Qwen CLI": {
-      "type": "custom",
-      "command": "/usr/bin/qwen",
-      "args": ["--experimental-acp"],
-      "env": {},
-    },
-  },
-  "agent": {
-    "favorite_models": [],
-    "default_model": {
-      "provider": "nano",
-      "model": "moonshotai/kimi-k2.5",
-    },
-    "dock": "right",
-    "expand_edit_card": false,
-    "use_modifier_to_send": false,
-    "enable_feedback": true,
-    "default_profile": "write",
-    "always_allow_tool_actions": true,
-  },
-  "vim_mode": true,
-  "telemetry": {
-    "diagnostics": false,
-    "metrics": false,
-  },
-  "base_keymap": "VSCode",
-  "ui_font_size": 16,
-  "ui_font_family": "GeistMono Nerd Font",
-  "buffer_font_family": "GeistMono Nerd Font",
-  "buffer_font_size": 16,
-  "theme": {
-    "mode": "system",
-    "light": "One Light",
-    "dark": "Ayu Dark",
-  },
-
   "context_servers": {
     "nuxt-hub": {
       "enabled": false,
@@ -199,6 +289,11 @@
             "max_tokens": 1048576,
           },
           {
+            "name": "qwen/qwen3-coder-next",
+            "display_name": "Qwen 3 Coder Next",
+            "max_tokens": 1048576,
+          },
+          {
             "name": "deepseek/deepseek-v3.2-speciale",
             "display_name": "DeepSeek V3.2 Speciale",
             "max_tokens": 1000000,
@@ -207,6 +302,12 @@
           {
             "name": "deepseek/deepseek-v3.2",
             "display_name": "DeepSeek V3.2",
+            "max_tokens": 1000000,
+            "max_output_tokens": 1000000,
+          },
+          {
+            "name": "deepseek/deepseek-v3.2:thinking",
+            "display_name": "DeepSeek V3.2 Thinking",
             "max_tokens": 1000000,
             "max_output_tokens": 1000000,
           },
@@ -222,8 +323,14 @@
             "max_output_tokens": 1000000,
           },
           {
-            "name": "minimax/minimax-m2.1",
-            "display_name": "MiniMax M2.1",
+            "name": "zai-org/glm-5",
+            "display_name": "GLM 5",
+            "max_tokens": 1000000,
+            "max_output_tokens": 1000000,
+          },
+          {
+            "name": "minimax/minimax-m2.5",
+            "display_name": "MiniMax M2.5",
             "max_tokens": 1000000,
             "max_output_tokens": 1000000,
           },
@@ -249,4 +356,26 @@
       },
     },
   },
+  "ssh_connections": [
+    {
+      "host": "5.230.54.210",
+      "username": "root",
+      "args": [],
+      "projects": [
+        {
+          "paths": ["/root"],
+        },
+      ],
+    },
+    {
+      "host": "185.231.181.103",
+      "username": "ubuntu",
+      "args": [],
+      "projects": [
+        {
+          "paths": ["/home/ubuntu"],
+        },
+      ],
+    },
+  ],
 }

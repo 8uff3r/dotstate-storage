@@ -32,3 +32,4 @@ x-scheme-handler/https=brave-browser.desktop
 x-scheme-handler/magnet=shiru.desktop
 x-scheme-handler/shiru=shiru.desktop
 x-scheme-handler/unknown=brave-browser.desktop
+x-scheme-handler/nanocode=NanoCode-handler.desktop
