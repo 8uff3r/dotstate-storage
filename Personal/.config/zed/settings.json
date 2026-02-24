@@ -28,7 +28,7 @@
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "Terafox - blurred",
+    "dark": "Catppuccin Macchiato (Blue Blur+)",
   },
 
   "session": {
@@ -75,7 +75,7 @@
     "favorite_models": [],
     "default_model": {
       "provider": "nano",
-      "model": "moonshotai/kimi-k2.5",
+      "model": "minimax/minimax-m2.5",
     },
     "dock": "right",
     "expand_edit_card": false,
@@ -250,7 +250,7 @@
   },
   "context_servers": {
     "nuxt-hub": {
-      "enabled": false,
+      "enabled": true,
       "url": "https://hub.nuxt.com/mcp",
       "settings": {},
     },
@@ -260,12 +260,12 @@
       "args": ["--bun", "shadcn-vue@latest", "mcp"],
     },
     "nuxt-ui": {
-      "enabled": false,
+      "enabled": true,
       "url": "https://ui.nuxt.com/mcp",
       "settings": {},
     },
     "nuxt": {
-      "enabled": false,
+      "enabled": true,
       "url": "https://nuxt.com/mcp",
       "settings": {},
     },
@@ -380,4 +380,9 @@
       ],
     },
   ],
+  "theme_overrides": {
+    "Catppuccin Macchiato (Blue Blur+)": {
+      "error.background": "#48161BFF",
+    },
+  },
 }
