@@ -61,6 +61,9 @@
   "icon_theme": "Colored Zed Icons Theme Dark",
 
   "agent_servers": {
+    "corust-agent": {
+      "type": "registry"
+    },
     "kimi": {
       "type": "registry",
     },
@@ -75,7 +78,7 @@
     "favorite_models": [],
     "default_model": {
       "provider": "nano",
-      "model": "minimax/minimax-m2.5",
+      "model": "zai-org/glm-5",
     },
     "dock": "right",
     "expand_edit_card": false,
