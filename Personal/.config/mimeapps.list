@@ -9,7 +9,7 @@ inode/directory=org.kde.dolphin.desktop;
 text/plain=org.kde.kate.desktop;
 text/vnd.trolltech.linguist=org.kde.kate.desktop;
 video/mp4=mpv.desktop;org.gnome.Showtime.desktop;
-video/x-matroska=org.gnome.Showtime.desktop;mpv.desktop;
+video/x-matroska=mpv.desktop;org.gnome.Showtime.desktop;org.kde.dragonplayer.desktop;smplayer_enqueue.desktop;smplayer.desktop;vlc.desktop;
 
 [Default Applications]
 application/json=org.kde.kate.desktop;
@@ -23,7 +23,7 @@ text/html=brave-browser.desktop
 text/plain=org.kde.kate.desktop;
 text/vnd.trolltech.linguist=org.kde.kate.desktop;
 video/mp4=mpv.desktop;
-video/x-matroska=org.gnome.Showtime.desktop;
+video/x-matroska=mpv.desktop;
 x-scheme-handler/about=brave-browser.desktop
 x-scheme-handler/chatbox=xyz.chatboxapp.app.desktop
 x-scheme-handler/discord-424004941485572097=discord-424004941485572097.desktop
