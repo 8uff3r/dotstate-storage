@@ -62,7 +62,7 @@
 
   "agent_servers": {
     "corust-agent": {
-      "type": "registry"
+      "type": "registry",
     },
     "kimi": {
       "type": "registry",
@@ -386,6 +386,8 @@
   "theme_overrides": {
     "Catppuccin Macchiato (Blue Blur+)": {
       "error.background": "#48161BFF",
+      "tab.inactive_background": "#00000000",
+      "tab.active_background": "#1e2030b0",
     },
   },
 }
