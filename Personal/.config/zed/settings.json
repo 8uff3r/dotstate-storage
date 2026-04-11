@@ -77,8 +77,8 @@
     },
     "favorite_models": [],
     "default_model": {
-      "provider": "nano",
-      "model": "zai-org/glm-5",
+      "provider": "gap",
+      "model": "gpt-4o-mini",
     },
     "dock": "right",
     "expand_edit_card": false,
@@ -285,6 +285,17 @@
           },
         ],
       },
+
+      "gap": {
+        "api_url": "https://api.gapgpt.app/v1",
+        "available_models": [
+          {
+            "name": "gpt-4o-mini",
+            "display_name": "GPT 4o-mini",
+            "max_tokens": 1048576,
+          },
+        ],
+      },
       "nano": {
         "api_url": "https://nano-gpt.com/api/v1",
         "available_models": [
@@ -386,8 +397,8 @@
   "theme_overrides": {
     "Catppuccin Macchiato (Blue Blur+)": {
       "error.background": "#48161BFF",
-      "tab.inactive_background": "#00000000",
-      "tab.active_background": "#1e2030b0",
+      "tab.inactive_background": "#1e203000",
+      "tab.active_background": "#00000033",
     },
   },
 }
