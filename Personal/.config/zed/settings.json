@@ -8,7 +8,7 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   "project_panel": {
-    "hide_gitignore": true,
+    "hide_gitignore": false,
     "hide_hidden": false,
   },
   "restore_on_startup": "last_workspace",
