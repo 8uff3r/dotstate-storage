@@ -3,6 +3,7 @@ local v = require("vars")
 local cmds = {
     "gnome-keyring-daemon --start --components=secrets",
     "/usr/lib/polkit-kde-authentication-agent-1",
+
     -- Clipboard history
     "wl-paste --type text --watch cliphist store",
     "wl-paste --type image --watch cliphist store",
@@ -23,18 +24,16 @@ local cmds = {
     "sleep 1 && gammastep",
 
     -- Forward bluetooth media commands to MPRIS
-    "mpris - proxy",
-
-    -- Resize and move windows based on matches(e.g.pip)
-    "caelestia resizer - d",
-
-    -- Start shell
-    "caelestia shell - d",
-
+    "mpris-proxy",
 
     "xwayland-satellite",
-    -- exec-once = v2rayN
-    "udiskie"
+    "udiskie",
+
+    -- Resize and move windows based on matches(e.g.pip)
+    "caelestia resizer -d",
+
+    -- Start shell
+    "caelestia shell -d",
 }
 hl.on("hyprland.start", function()
     for _, value in ipairs(cmds) do

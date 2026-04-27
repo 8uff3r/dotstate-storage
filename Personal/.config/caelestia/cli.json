@@ -1,0 +1,5 @@
+{
+  "wallpaper": {
+    "postHook": "cd /home/rylan/.config/hypr && lua5.4 scheme_to_table.lua"
+  }
+}

@@ -10,6 +10,11 @@
 -- require("myColors")
 
 
+-------------------
+---- VARIABLES ----
+-------------------
+local v = require("vars")
+
 ------------------
 ---- MONITORS ----
 ------------------
@@ -21,12 +26,6 @@ hl.monitor({
     position = "auto",
     scale    = "auto",
 })
-
-
--------------------
----- VARIABLES ----
--------------------
-local v = require("vars")
 
 -------------------
 ---- AUTOSTART ----
@@ -50,6 +49,7 @@ require("env")
 ---- LOOK AND FEEL ----
 -----------------------
 
+local c = require("colorscheme_gen")
 -- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
 hl.config({
     general = {
@@ -59,8 +59,8 @@ hl.config({
         border_size      = 2,
 
         col              = {
-            active_border   = { colors = { "rgba(33ccffee)", "rgba(00ff99ee)" }, angle = 45 },
-            inactive_border = "rgba(595959aa)",
+            -- active_border   = { colors = { "rgba(33ccffee)", "rgba(00ff99ee)" }, angle = 45 },
+            -- inactive_border = "rgba(595959aa)",
         },
 
         -- Set to true to enable resizing windows by clicking and dragging on borders and gaps
@@ -70,6 +70,34 @@ hl.config({
         allow_tearing    = false,
 
         layout           = "dwindle",
+    },
+
+    group = {
+        auto_group = true,
+        col = {
+            border_active = ("rgb(%s)"):format(c.colours.surfaceTint),
+            border_inactive = ("rgb(%s)"):format(c.colours.inversePrimary),
+        },
+        groupbar = {
+            col = {
+                active = ("rgb(%s)"):format(c.colours.primary),
+                inactive = ("rgb(%s)"):format(c.colours.surfaceBright),
+            },
+            font_family = "CaskaydiaCove Nerd Font",
+            font_size = 14,
+            gradients = true,
+            height = 20,
+            gaps_in = 5,
+            gaps_out = 5,
+            keep_upper_gap = false,
+            round_only_edges = false,
+            gradient_rounding = 2,
+            gradient_round_only_edges = false,
+            indicator_height = 0,
+            indicator_gap = 4,
+            text_color = ("rgb(%s)"):format(c.colours.background),
+            text_color_inactive = ("rgb(%s)"):format(c.colours.onSurfaceVariant),
+        },
     },
 
     decoration = {
@@ -92,6 +120,7 @@ hl.config({
             size     = 3,
             passes   = 1,
             vibrancy = 0.1696,
+            special  = true
         },
     },
 
@@ -182,20 +211,35 @@ hl.config({
 
 hl.config({
     input = {
-        kb_layout    = "us",
-        kb_variant   = "",
-        kb_model     = "",
-        kb_options   = "",
-        kb_rules     = "",
+        kb_layout          = "us,ir",
+        kb_variant         = "",
+        kb_model           = "",
+        kb_options         = "",
+        kb_rules           = "",
 
-        follow_mouse = 1,
+        numlock_by_default = false,
+        repeat_delay       = 250,
+        repeat_rate        = 35,
 
-        sensitivity  = 0, -- -1.0 - 1.0, 0 means no modification.
+        focus_on_close     = 1,
 
-        touchpad     = {
-            natural_scroll = false,
+        touchpad           = {
+            natural_scroll = true,
+            disable_while_typing = v.touchpadDisableTyping,
+            scroll_factor = v.touchpadScrollFactor,
         },
+
+        follow_mouse       = 1,
+
+        sensitivity        = 0, -- -1.0 - 1.0, 0 means no modification.
+
     },
+    cursor = {
+        hotspot_padding = 1
+    },
+    binds = {
+        scroll_event_delay = 0
+    }
 })
 
 hl.gesture({
@@ -218,55 +262,12 @@ hl.device({
 
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
+
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
-hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(v.terminal))
-local closeWindowBind = hl.bind(mainMod .. " + C", hl.dsp.window.close())
--- closeWindowBind:set_enabled(false)
 hl.bind(mainMod .. " + M",
     hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
-hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(v.fileManager))
-hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(v.menu))
-hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
-hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
 
--- Move focus with mainMod + arrow keys
-hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "left" }))
-hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
-hl.bind(mainMod .. " + up", hl.dsp.focus({ direction = "up" }))
-hl.bind(mainMod .. " + down", hl.dsp.focus({ direction = "down" }))
 
--- Switch workspaces with mainMod + [0-9]
--- Move active window to a workspace with mainMod + SHIFT + [0-9]
-for i = 1, 10 do
-    local key = i % 10 -- 10 maps to key 0
-    hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
-    hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
-end
-
--- Example special workspace (scratchpad)
-hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
-
--- Scroll through existing workspaces with mainMod + scroll
-hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
-hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
-
--- Move/resize windows with mainMod + LMB/RMB and dragging
-hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
-hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
-
--- Laptop multimedia keys for volume and LCD brightness
-hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"),
-    { locked = true, repeating = true })
-hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),
-    { locked = true, repeating = true })
-hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"),
-    { locked = true, repeating = true })
-hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"),
-    { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"), { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"), { locked = true, repeating = true })
 
 -- Requires playerctl
 hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true })
@@ -274,6 +275,8 @@ hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = tr
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
 
+
+require("binds")
 
 --------------------------------
 ---- WINDOWS AND WORKSPACES ----
@@ -292,7 +295,6 @@ local suppressMaximizeRule = hl.window_rule({
     suppress_event = "maximize",
 })
 -- suppressMaximizeRule:set_enabled(false)
-
 hl.window_rule({
     -- Fix some dragging issues with XWayland
     name     = "fix-xwayland-drags",
@@ -324,3 +326,5 @@ hl.window_rule({
     move  = "20 monitor_h-120",
     float = true,
 })
+
+require("rules")
