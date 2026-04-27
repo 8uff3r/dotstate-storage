@@ -190,10 +190,10 @@ end
 ---@type HL.WindowRuleSpec[]
 local rules_2 = {
     -- Border colors
-    -- { match = { pin = true, float = true }, border_color = "rgb(D9A2D0)" },
-    -- { match = { fullscreen = true }, border_color = "rgb(FFB454)" },
-    -- { match = { fullscreen = true, float = true }, border_color = "rgb(FFB454)" },
-    -- { match = { pin = false, float = true }, border_color = "rgb(349CCF)" },
+    { match = { pin = true, float = true }, border_color = "rgb(D9A2D0)" },
+    { match = { fullscreen = true }, border_color = "rgb(FFB454)" },
+    { match = { fullscreen = true, float = true }, border_color = "rgb(FFB454)" },
+    { match = { pin = false, float = true }, border_color = "rgb(349CCF)" },
 
     -- Group
     { match = { class = ".*" }, group = "set" },
