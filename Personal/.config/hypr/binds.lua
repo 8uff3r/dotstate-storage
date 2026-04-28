@@ -85,6 +85,28 @@ local binds = {
         { mouse = true },
     },
 
+    {
+        "CTRL + SHIFT + l",
+        hl.dsp.window.resize({ x = 15, y = 0, relative = true }),
+        { repeating = true }
+    },
+    {
+        "CTRL + SHIFT + h",
+        hl.dsp.window.resize({ x = -15, y = 0, relative = true }),
+        { repeating = true }
+    },
+    {
+        "CTRL + SHIFT + k",
+        hl.dsp.window.resize({ x = 0, y = 15, relative = true }),
+        { repeating = true }
+    },
+    {
+        "CTRL + SHIFT + j",
+        hl.dsp.window.resize({ x = 0, y = -15, relative = true }),
+        { repeating = true }
+    },
+    { mainMod .. " + Escape",  hl.dsp.focus({ workspace = "previous" }) },
+
     { mainMod .. " + X",       hl.dsp.window.float({ action = "toggle" }) },
     { mainMod .. " + P",       hl.dsp.window.pseudo() },
     { mainMod .. " + C",       hl.dsp.window.close() },
@@ -94,12 +116,12 @@ local binds = {
     -- APPS
     { mainMod .. " + E",       hl.dsp.exec_cmd(v.fileManager) },
     -- { mainMod .. " + R",      hl.dsp.exec_cmd(v.menu) },
-    {mainMod.." + Z", hl.dsp.exec_cmd("zed")},
+    { mainMod .. " + Z",       hl.dsp.exec_cmd("zed") },
 
     -- { mainMod .. " + R",       hl.dsp.global("caelestia:launcher") },
     { mainMod .. " + R",       hl.dsp.exec_cmd("caelestia shell drawers toggle launcher") },
     { mainMod .. " + Q",       hl.dsp.global("caelestia:session") },
-    { "CTRL + ALT + C",        hl.dsp.global("caelestia:clearNotifs"),                   { locked = true } },
+    { "CTRL + ALT + C",        hl.dsp.global("caelestia:clearNotifs"),                    { locked = true } },
     { mainMod .. " + Y",       hl.dsp.global("caelestia:showall") },
     { "ALT + 4",               hl.dsp.global("caelestia:lock") },
     { mainMod .. " + V",       hl.dsp.exec_cmd("pkill fuzzel || caelestia clipboard") },
@@ -160,31 +182,26 @@ local binds = {
         { locked = true },
     },
 
-    { "CTRL + SHIFT + l",               hl.dsp.window.resize({ x = 15, y = 0 }) },
-    { "CTRL + SHIFT + h",               hl.dsp.window.resize({ x = -15, y = 0 }), },
-    { "CTRL + SHIFT + k",               hl.dsp.window.resize({ x = 0, y = 15 }) },
-    { "CTRL + SHIFT + j",               hl.dsp.window.resize({ x = 0, y = -15 }) },
 
-    { mainMod .. " + Space",            hl.dsp.exec_cmd("hyprctl switchxkblayout kanata next"), { locked = true } },
+    { mainMod .. " + Space",           hl.dsp.exec_cmd("hyprctl switchxkblayout kanata next"), { locked = true } },
 
-    { mainMod .. " + Escape",           hl.dsp.focus({ workspace = "previous" }) },
 
     -- bind = $kbWindowPip, exec, caelestia resizer pip  # Move window to picture-in-picture mode
     --
     -- Utilities
     -- bindl = , Print, exec, caelestia screenshot  # Full screen capture > clipboard
     -- Capture region (freeze)
-    { mainMod .. " + CTRL + S",         hl.dsp.global("caelestia:screenshotFreeze") },
+    { mainMod .. " + CTRL + S",        hl.dsp.global("caelestia:screenshotFreeze") },
     -- Capture region
-    { mainMod .. " + SHIFT + ALT + S",  hl.dsp.global("caelestia:screenshot") },
+    { mainMod .. " + SHIFT + ALT + S", hl.dsp.global("caelestia:screenshot") },
     -- Record screen with sound
-    { mainMod .. " + ALT + R",          hl.dsp.exec_cmd("caelestia record -s") },
+    { mainMod .. " + ALT + R",         hl.dsp.exec_cmd("caelestia record -s") },
     -- Record screen
-    { "CTRL + ALT + R",                 hl.dsp.exec_cmd("caelestia record") },
+    { "CTRL + ALT + R",                hl.dsp.exec_cmd("caelestia record") },
     -- Record region
-    { mainMod .. " + SHIFT + ALT + R",  hl.dsp.exec_cmd("caelestia record -r") },
+    { mainMod .. " + SHIFT + ALT + R", hl.dsp.exec_cmd("caelestia record -r") },
     -- Colour picker
-    { mainMod .. " + SHIFT + C",        hl.dsp.exec_cmd("hyprpicker -a ") }
+    { mainMod .. " + SHIFT + C",       hl.dsp.exec_cmd("hyprpicker -a ") }
 }
 
 for _, value in ipairs(binds) do
