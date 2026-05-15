@@ -91,6 +91,12 @@
     "default_profile": "write",
   },
   "lsp": {
+    "tailwindcss-language-server": {
+      "settings": {
+        "classFunctions": ["clsx", "cn", "defineAppConfig"],
+        "classAttributes": ["class", "ui"],
+      },
+    },
     "oxlint": {
       "initialization_options": {
         "settings": {

@@ -1,17 +1,13 @@
 ---@type HL.WindowRuleSpec[]
 local rules = {
-    -- Opacity for non-fullscreen windows
-    { match = { fullscreen = false },                                 opacity = 1.0 },
-
+    -- Group
+    { match = { class = ".*" }, group = "set" },
+    { match = { float = true }, group = "deny" },
     -- Native transparency or force opaque
     {
         match = { class = "foot|equibop|org\\.quickshell|imv|swappy" },
         opacity = "1.0 override",
     },
-
-    -- Center all floating windows (not xwayland)
-    { match = { float = true, xwayland = false },                     center = true },
-
     -- Float
     { match = { class = "guifetch" },                                 float = true },
     { match = { class = "yad" },                                      float = true },
@@ -110,21 +106,30 @@ local rules = {
 
     -- Steam
     {
-        match = { class = "steam" },
+        match = { class = "^(steam)$" },
+        group = "deny",
+        suppress_event = "fullscreen",
         rounding = 10,
     },
     {
         match = { class = "steam", title = "Friends List" },
         float = true,
     },
+    { match = { class = "^(steam)$", title = "^(Steam Big Picture Mode)$" }, fullscreen = true },
+    { match = { class = "^()$", title = "^(Steam - Self Updater)$" }, float = true },
 
     -- Games (Steam, Lutris/Wine, Gamescope)
     {
         match = { class = "steam_app_(default|[0-9]+)|gamescope" },
         opacity = "1.0 override",
         immediate = true,
+        group = "deny",
         idle_inhibit = "always",
+        fullscreen = true
     },
+    -- Tearing
+    { match = { title = ".*\\.exe" }, immediate = true },
+    { match = { title = ".*minecraft.*" }, immediate = true },
 
     -- Minecraft launcher consoles
     {
@@ -149,68 +154,21 @@ local rules = {
         no_shadow = true,
         rounding = 10
     },
-}
-
----@type HL.LayerRuleSpec[]
-local layer_rules = {
-    { match = { namespace = "hyprpicker" },    animation = "fade" },
-    { match = { namespace = "logout_dialog" }, animation = "fade" },
-    { match = { namespace = "selection" },     animation = "fade" },
-    { match = { namespace = "wayfreeze" },     animation = "fade" },
-
-    -- Fuzzel
-    { match = { namespace = "launcher" },      animation = "popin 80%", blur = true },
-
-    -- Shell
-    {
-        match = { namespace = "caelestia-(border-exclusion|area-picker)" },
-        no_anim = true,
-    },
-    {
-        match = { namespace = "caelestia-(drawers|background)" },
-        animation = "fade",
-    },
-    {
-        match = { namespace = "caelestia-drawers" },
-        blur = true,
-        ignore_alpha = 0.57,
-    },
-
-    { match = { namespace = "gtk4-layer-shell" }, no_anim = true },
-}
-
-for _, value in ipairs(rules) do
-    hl.window_rule(value)
-end
-
-for _, value in ipairs(layer_rules) do
-    hl.layer_rule(value)
-end
-
----@type HL.WindowRuleSpec[]
-local rules_2 = {
     -- Border colors
     { match = { pin = true, float = true }, border_color = "rgb(D9A2D0)" },
     { match = { fullscreen = true }, border_color = "rgb(FFB454)" },
     { match = { fullscreen = true, float = true }, border_color = "rgb(FFB454)" },
     { match = { pin = false, float = true }, border_color = "rgb(349CCF)" },
 
-    -- Group
-    { match = { class = ".*" }, group = "set" },
-    { match = { float = true }, group = "deny" },
-    { match = { class = "^(steam)$", title = "^(Steam Big Picture Mode)$" }, fullscreen = true },
-    { match = { class = "^(steam_app_[0-9]+)$" }, group = "deny" },
-
     -- Apps
     { match = { class = "^(org.telegram.desktop)$" }, workspace = "special:special" },
     { match = { class = "^(v2rayN)$" }, workspace = "special:special" },
+    { match = { class = "^(Throne)$" }, workspace = "special:special" },
     { match = { class = "gephgui-wry" }, float = true },
     { match = { class = "^(nvim)$" }, workspace = "1" },
     { match = { class = "^(dev.zed.Zed)$" }, workspace = "1" },
     { match = { class = "^(brave-browser)$" }, workspace = "2" },
     { match = { class = "^(zen)$" }, workspace = "2" },
-    { match = { class = "^(steam_app_.*)$" }, fullscreen = true },
-    { match = { class = "^()$", title = "^(Steam - Self Updater)$" }, float = true },
     { match = { class = "^(blueman-manager)$" }, float = true },
     { match = { class = "^(org.kde.polkit-kde-authentication-agent-1)$" }, float = true },
     { match = { class = "^(zenity)$" }, float = true },
@@ -226,16 +184,11 @@ local rules_2 = {
     -- amnezia
     { match = { class = "^(AmneziaVPN)$" }, float = true, group = "deny" },
 
-    { match = { class = "mpv" }, group = "deny" },
     -- mpv
     { match = { class = "mpv" }, group = "deny", float = true, size = "960 540" },
 
     -- org.freedesktop.impl.portal.desktop.kde
     { match = { class = "org.freedesktop.impl.portal.desktop.kde" }, float = true, size = "740 490" },
-
-    { match = { class = "steam" }, group = "deny" },
-    -- steam
-    { match = { class = "^(steam)$" }, group = "deny", suppress_event = "fullscreen" },
 
     -- brave file picker
     { match = { class = "^(brave-browser)$", title = "^(Open File)$|^(Save File)$" }, float = true },
@@ -312,19 +265,53 @@ local rules_2 = {
     -- Picture-in-Picture
     { match = { title = "^([Pp]icture[-\\s]?[Ii]n[-\\s]?[Pp]icture)(.*)$" }, float = true, keep_aspect_ratio = true, move = "(monitor_w*.73) (monitor_h*.72)", size = "(monitor_w*.25) (monitor_h*.25)", pin = true },
 
-    -- Tearing
-    { match = { title = ".*\\.exe" }, immediate = true },
-    { match = { title = ".*minecraft.*" }, immediate = true },
-    { match = { class = "^(steam_app).*" }, immediate = true },
-
     -- Fix JetBrains IDEs focus/rerendering
     { match = { class = "^jetbrains-.*$", float = true, title = "^$|^\\s$|^win\\d+$" }, no_initial_focus = true },
 
     -- No shadow for tiled windows
     { match = { float = false }, no_shadow = true },
+    { match = { workspace = "special:special" }, group = "deny" },
+    -- Opacity for non-fullscreen windows
+    { match = { fullscreen = false },                                 opacity = 1.0 },
+    -- Center all floating windows (not xwayland)
+    { match = { float = true, xwayland = false },                     center = true },
 }
-for _, value in ipairs(rules_2) do
+
+
+---@type HL.LayerRuleSpec[]
+local layer_rules = {
+    { match = { namespace = "hyprpicker" },    animation = "fade" },
+    { match = { namespace = "logout_dialog" }, animation = "fade" },
+    { match = { namespace = "selection" },     animation = "fade" },
+    { match = { namespace = "wayfreeze" },     animation = "fade" },
+
+    -- Fuzzel
+    { match = { namespace = "launcher" },      animation = "popin 80%", blur = true },
+
+    -- Shell
+    {
+        match = { namespace = "caelestia-(border-exclusion|area-picker)" },
+        no_anim = true,
+    },
+    {
+        match = { namespace = "caelestia-(drawers|background)" },
+        animation = "fade",
+    },
+    {
+        match = { namespace = "caelestia-drawers" },
+        blur = true,
+        ignore_alpha = 0.57,
+    },
+
+    { match = { namespace = "gtk4-layer-shell" }, no_anim = true },
+}
+
+for _, value in ipairs(layer_rules) do
+    hl.layer_rule(value)
+end
+
+for _, value in ipairs(rules) do
     hl.window_rule(value)
 end
 
-hl.workspace_rule({ workspace = "special:special", gaps_out = 50 })
+hl.workspace_rule({ workspace = "special:special", gaps_out = 50, layout ="scrolling" })

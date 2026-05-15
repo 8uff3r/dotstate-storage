@@ -59,7 +59,13 @@
         "wallpaperEnabled": true
     },
     "bar": {
+        "activeWindow": {
+            "compact": true,
+            "inverted": true
+        },
         "clock": {
+            "background": true,
+            "showDate": true,
             "showIcon": true
         },
         "dragThreshold": 20,
@@ -405,6 +411,11 @@
         "enableDangerousActions": false,
         "enabled": true,
         "favouriteApps": [
+            "brave-browser",
+            "steam",
+            "v2rayN-bin",
+            "dev.zed.Zed",
+            "org.kde.kdeconnect.app"
         ],
         "hiddenApps": [
         ],
@@ -504,14 +515,13 @@
             "dndChanged": true,
             "gameModeChanged": true,
             "kbLayoutChanged": true,
-            "nowPlaying": false,
+            "nowPlaying": true,
             "numLockChanged": false,
             "vpnChanged": true
         },
         "vpn": {
             "enabled": false,
             "provider": [
-                "netbird"
             ]
         }
     }

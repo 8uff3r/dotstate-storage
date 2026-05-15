@@ -38,28 +38,28 @@ local binds = {
     -- Toggle Grouping for active window
     { mainMod .. " + CTRL + g",   hl.dsp.group.toggle() },
     -- Focus next window in group
-    { "ALT + l",                  hl.dsp.group.next() },
+    { "ALT + L",                  hl.dsp.group.next() },
     -- Focus previous window in group
-    { "ALT + h",                  hl.dsp.group.prev() },
+    { "ALT + H",                  hl.dsp.group.prev() },
     -- Swap with next window in group
-    { "ALT + SHIFT + l",          hl.dsp.group.move_window({ forward = true }) },
+    { "ALT + SHIFT + L",          hl.dsp.group.move_window({ forward = true }) },
     -- Swap with previous window in group
-    { "ALT + SHIFT + h",          hl.dsp.group.move_window({ forward = false }) },
+    { "ALT + SHIFT + H",          hl.dsp.group.move_window({ forward = false }) },
 
     -- Move window in/out of group in/to left
-    { mainMod .. " + CTRL + h",   into_or_out_of_group("left") },
+    { mainMod .. " + CTRL + H",   into_or_out_of_group("left") },
     -- Move window in/out of group in/to right
-    { mainMod .. " + CTRL + l",   into_or_out_of_group("right") },
+    { mainMod .. " + CTRL + L",   into_or_out_of_group("right") },
     -- Move window + in/out of group in/to up
-    { mainMod .. " + CTRL + k",   into_or_out_of_group("up") },
+    { mainMod .. " + CTRL + K",   into_or_out_of_group("up") },
     -- Move window + in/out of group in/to down
-    { mainMod .. " + CTRL + j",   into_or_out_of_group("down") },
+    { mainMod .. " + CTRL + J",   into_or_out_of_group("down") },
 
     -- Move focus with mainMod + arrow keys
-    { mainMod .. " + h",          hl.dsp.focus({ direction = "left" }) },
-    { mainMod .. " + l",          hl.dsp.focus({ direction = "right" }) },
-    { mainMod .. " + k",          hl.dsp.focus({ direction = "up" }) },
-    { mainMod .. " + j",          hl.dsp.focus({ direction = "down" }) },
+    { mainMod .. " + H",          hl.dsp.focus({ direction = "left" }) },
+    { mainMod .. " + L",          hl.dsp.focus({ direction = "right" }) },
+    { mainMod .. " + K",          hl.dsp.focus({ direction = "up" }) },
+    { mainMod .. " + J",          hl.dsp.focus({ direction = "down" }) },
 
     { mainMod .. " + SHIFT + H",  hl.dsp.window.move({ direction = "left" }) },
     { mainMod .. " + SHIFT + L",  hl.dsp.window.move({ direction = "right" }) },
@@ -86,22 +86,22 @@ local binds = {
     },
 
     {
-        "CTRL + SHIFT + l",
+        "CTRL + SHIFT + L",
         hl.dsp.window.resize({ x = 15, y = 0, relative = true }),
         { repeating = true }
     },
     {
-        "CTRL + SHIFT + h",
+        "CTRL + SHIFT + H",
         hl.dsp.window.resize({ x = -15, y = 0, relative = true }),
         { repeating = true }
     },
     {
-        "CTRL + SHIFT + k",
+        "CTRL + SHIFT + K",
         hl.dsp.window.resize({ x = 0, y = 15, relative = true }),
         { repeating = true }
     },
     {
-        "CTRL + SHIFT + j",
+        "CTRL + SHIFT + J",
         hl.dsp.window.resize({ x = 0, y = -15, relative = true }),
         { repeating = true }
     },
