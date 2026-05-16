@@ -1,14 +1,22 @@
 return {
   "NeogitOrg/neogit",
+  lazy = true,
   dependencies = {
-    "nvim-lua/plenary.nvim", -- required
-    "nvim-telescope/telescope.nvim", -- optional
+    -- Only one of these is needed.
     "sindrets/diffview.nvim", -- optional
-    -- "ibhagwan/fzf-lua", -- optional
+    "esmuellert/codediff.nvim", -- optional
+
+    -- For a custom log pager
+    "m00qek/baleia.nvim", -- optional
+
+    -- Only one of these is needed.
+    "nvim-telescope/telescope.nvim", -- optional
+    "ibhagwan/fzf-lua", -- optional
+    "nvim-mini/mini.pick", -- optional
+    "folke/snacks.nvim", -- optional
   },
-  opts = {
-    status = {
-      recent_commit_count = 30,
-    },
+  cmd = "Neogit",
+  keys = {
+    { "<leader>gg", "<cmd>Neogit<cr>", desc = "Show Neogit UI" },
   },
 }

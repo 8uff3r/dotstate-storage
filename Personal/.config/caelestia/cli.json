@@ -4,6 +4,7 @@
   },
   "theme": {
     "enableChromium": false,
-    "enableZed": false
+    "enableZed": false,
+    "enableTerm": false
   }
 }

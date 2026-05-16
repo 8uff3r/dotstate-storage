@@ -2,7 +2,7 @@ local M = {
 	---------------------
 	---- MY PROGRAMS ----
 	---------------------
-	terminal = "konsole",
+	terminal = "wezterm",
 	fileManager = "XDG_MENU_PREFIX=arch- kbuildsycoca6 && dolphin",
 	menu = "fuzzel",
 
