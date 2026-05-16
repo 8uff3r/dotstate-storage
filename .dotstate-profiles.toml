@@ -33,5 +33,6 @@ synced_files = [
     ".config/wofi",
     ".config/zed",
     ".config/zellij",
+    "scripts/konsole-nvim.sh",
 ]
 packages = []

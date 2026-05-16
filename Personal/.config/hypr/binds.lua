@@ -121,7 +121,7 @@ local binds = {
 	{ mainMod .. " + E", hl.dsp.exec_cmd(v.fileManager) },
 	-- { mainMod .. " + R",      hl.dsp.exec_cmd(v.menu) },
 	{ mainMod .. " + Z", hl.dsp.exec_cmd("zed") },
-	{ mainMod .. " + N", hl.dsp.exec_cmd("konsole -e nvim") },
+	{ mainMod .. " + N", hl.dsp.exec_cmd("konsole -e ~/scripts/konsole-nvim.sh") },
 
 	-- { mainMod .. " + R",       hl.dsp.global("caelestia:launcher") },
 	{ mainMod .. " + R", hl.dsp.exec_cmd("caelestia shell drawers toggle launcher") },
@@ -133,6 +133,10 @@ local binds = {
 	{ mainMod .. " + ALT + V", hl.dsp.exec_cmd("pkill fuzzel || caelestia clipboard -d") },
 	{ mainMod .. " + Period", hl.dsp.exec_cmd("pkill fuzzel || caelestia emoji -p") },
 	{ mainMod .. " + Return", hl.dsp.exec_cmd(v.terminal) },
+	{
+		mainMod .. " + SHIFT + Return",
+		hl.dsp.exec_cmd("konsole -e nvim -c 'lua Snacks.terminal.focus(nil, { cwd = LazyVim.root() }) vim.cmd.only()'"),
+	},
 
 	-- Laptop multimedia keys for volume and LCD brightness
 	{
