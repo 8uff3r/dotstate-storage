@@ -32,8 +32,8 @@
   "buffer_font_size": 16,
   "theme": {
     "mode": "system",
-    "light": "One Light",
-    "dark": "Catppuccin Macchiato (Blue Blur+)",
+    "light": "Ayu Light",
+    "dark": "Ayu Dark",
   },
 
   "session": {

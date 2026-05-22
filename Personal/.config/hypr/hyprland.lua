@@ -203,8 +203,8 @@ hl.config({
 		force_default_wallpaper = -1,
 		-- If true disables the random hyprland logo / anime girl background. :(
 		disable_hyprland_logo = false,
-		enable_swallow = true,
-		swallow_regex = "kitty",
+		-- enable_swallow = true,
+		-- swallow_regex = "kitty",
 	},
 })
 

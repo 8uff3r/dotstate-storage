@@ -3,6 +3,14 @@ local rules = {
 	-- Group
 	{ match = { class = ".*" }, group = "set" },
 	{ match = { float = true }, group = "deny" },
+
+	-- No shadow for tiled windows
+	{ match = { float = false }, no_shadow = true },
+	{ match = { workspace = "special:special" }, group = "deny" },
+	-- Opacity for non-fullscreen windows
+	{ match = { fullscreen = false }, opacity = 1.0 },
+	-- Center all floating windows (not xwayland)
+	{ match = { float = true, xwayland = false }, center = true },
 	-- Native transparency or force opaque
 	{
 		match = { class = "foot|equibop|org\\.quickshell|imv|swappy" },
@@ -95,13 +103,6 @@ local rules = {
 	{
 		match = { class = "krita|gimp|inkscape|darktable|resolve|kdenlive|shotcut|blender|godot" },
 		opacity = "1.0 override",
-	},
-
-	-- Ueberzugpp
-	{
-		match = { class = "ueberzugpp_.*" },
-		float = true,
-		no_initial_focus = true,
 	},
 
 	-- Steam
@@ -330,14 +331,13 @@ local rules = {
 
 	-- Fix JetBrains IDEs focus/rerendering
 	{ match = { class = "^jetbrains-.*$", float = true, title = "^$|^\\s$|^win\\d+$" }, no_initial_focus = true },
-
-	-- No shadow for tiled windows
-	{ match = { float = false }, no_shadow = true },
-	{ match = { workspace = "special:special" }, group = "deny" },
-	-- Opacity for non-fullscreen windows
-	{ match = { fullscreen = false }, opacity = 1.0 },
-	-- Center all floating windows (not xwayland)
-	{ match = { float = true, xwayland = false }, center = true },
+	-- Ueberzugpp
+	{
+		match = { class = "ueberzugpp_.*" },
+		float = true,
+		no_initial_focus = true,
+		group = "deny",
+	},
 }
 
 ---@type HL.LayerRuleSpec[]

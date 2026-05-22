@@ -121,7 +121,7 @@ local binds = {
 	{ mainMod .. " + E", hl.dsp.exec_cmd(v.fileManager) },
 	-- { mainMod .. " + R",      hl.dsp.exec_cmd(v.menu) },
 	{ mainMod .. " + Z", hl.dsp.exec_cmd("zed") },
-	{ mainMod .. " + N", hl.dsp.exec_cmd(v.terminal .. " -e fish -c nvim") },
+	{ mainMod .. " + N", hl.dsp.exec_cmd("export IS_NVIM=1 &&" .. v.terminal .. " -e nvim") },
 
 	-- { mainMod .. " + R",       hl.dsp.global("caelestia:launcher") },
 	{ mainMod .. " + R", hl.dsp.exec_cmd("caelestia shell drawers toggle launcher") },

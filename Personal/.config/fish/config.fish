@@ -62,6 +62,7 @@ if status is-interactive # Commands to run in interactive sessions can go here
     alias diff="kitten diff"
     alias icat="kitten icat"
     alias kssh="kitten ssh --kitten login_shell=fish"
+    alias wssh="wezterm ssh"
     alias ksshb="kitten ssh"
     alias myip="curl -s https://api.ipify.org"
 
@@ -87,3 +88,7 @@ end
 export CARGO_BUILD_BUILD_DIR=$HOME/.cache/cargo-build
 source ~/.config/.env
 #source ~/.config/fish/colorized.fish
+
+
+# Added by Antigravity CLI installer
+set -gx PATH "/home/rylan/.local/bin" $PATH

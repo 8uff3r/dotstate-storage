@@ -2,13 +2,38 @@ local wezterm = require("wezterm")
 local act = wezterm.action
 local actc = wezterm.action_callback
 
+---@type fun(pane:any):boolean
+local function is_nvim(pane)
+	return pane:get_foreground_process_info().name == "nvim"
+end
+---@type fun(opts: {direction:string,size:any,key:string,mods:string}):any
+local function nvim_pane_split(opts)
+	local M = {}
+	M.action = actc(function(window, pane)
+		if is_nvim(pane) then
+			window:perform_action(
+				act.SendKey({
+					key = opts.key,
+					mods = opts.mods,
+				}),
+				pane
+			)
+		else
+			window:perform_action(wezterm.action.SplitPane({ direction = opts.direction, size = opts.size }), pane)
+		end
+	end)
+	M.key = opts.key
+	M.mods = opts.mods
+	return M
+end
+
 local function nvim_pane_rev(direction)
 	local convert = { Up = "k", Down = "j", Right = "l", Left = "h" }
 
 	local M = {}
 
 	M.action = actc(function(win, pane)
-		if pane:get_foreground_process_info().name == "nvim" then
+		if is_nvim(pane) then
 			win:perform_action(
 				act.SendKey({
 					key = convert[direction],
@@ -80,27 +105,30 @@ local config = {
 	bold_brightens_ansi_colors = "No",
 	window_background_opacity = 0.95,
 	text_background_opacity = 0.95,
-	harfbuzz_features = { "ss01", "ss02", "ss03", "ss04", "ss05", "ss06", "ss07", "ss08", "calt", "dlig", "liga" },
+	-- harfbuzz_features = { "ss01", "ss02", "ss03", "ss04", "ss05", "ss06", "ss07", "ss08", "calt", "dlig", "liga" },
+	harfbuzz_features = { "ss03", "ss04", "ss05", "ss06", "ss07", "ss08", "calt", "dlig", "liga" },
+	window_close_confirmation = "NeverPrompt",
+	enable_scroll_bar = true,
 
 	font = wezterm.font_with_fallback({
-		{ family = "GeistMono Nerd Font", weight = 500 },
+		{ family = "JetBrains Mono Nerd Font", weight = 600 },
 		{ family = "Vazir Code", weight = 600 },
-		{ family = "Jetbrains Mono", weight = 480 },
+		{ family = "GeistMono Nerd Font", weight = 500 },
 		{ family = "FiraCode Nerd Font", weight = 450 },
 		{ family = "Hack Nerd Font Mono", weight = 400 },
 		{ family = "MonaspiceNe Nerd Font", weight = 400 },
 		{ family = "Symbols Nerd Font Mono" },
 	}),
-	font_size = 13,
-	-- font_rules = {
-	-- 	{
-	-- 		italic = true,
-	-- 		font = wezterm.font_with_fallback({
-	-- 			{ family = "MonaspiceKr Nerd Font", weight = 500 },
-	-- 			{ family = "Jetbrains Mono", weight = "DemiBold" },
-	-- 		}),
-	-- 	},
-	-- },
+	font_size = 14,
+	font_rules = {
+		{
+			italic = true,
+			font = wezterm.font_with_fallback({
+				{ family = "MonaspiceKr Nerd Font", weight = 900, italic = true },
+				{ family = "Jetbrains Mono", weight = "DemiBold" },
+			}),
+		},
+	},
 
 	window_padding = {
 		left = 0,
@@ -122,17 +150,19 @@ local config = {
 		nvim_pane_rev("Up"),
 		nvim_pane_rev("Right"),
 		nvim_pane_rev("Left"),
+		nvim_pane_split({ mods = "ALT", key = "Enter", direction = "Down", size = { Percent = 20 } }),
+		nvim_pane_split({ mods = "ALT|SHIFT", key = "Enter", direction = "Right", size = { Percent = 30 } }),
 		{
 			key = "Enter",
-			mods = "ALT",
+			mods = "ALT|CTRL",
 			action = wezterm.action.SplitPane({
 				direction = "Down",
-				size = { Percent = 20 },
+				size = { Percent = 30 },
 			}),
 		},
 		{
 			key = "Enter",
-			mods = "ALT|SHIFT",
+			mods = "ALT|CTRL|SHIFT",
 			action = wezterm.action.SplitPane({
 				direction = "Right",
 				size = { Percent = 30 },
@@ -148,8 +178,8 @@ local config = {
 			mods = "CTRL|SHIFT",
 			action = act.CopyTo("Clipboard"),
 		},
-		{ key = "h", mods = "ALT", action = act.ActivateTabRelative(-1) },
-		{ key = "l", mods = "ALT", action = act.ActivateTabRelative(1) },
+		{ key = "[", mods = "ALT", action = act.ActivateTabRelative(-1) },
+		{ key = "]", mods = "ALT", action = act.ActivateTabRelative(1) },
 		{
 			key = "t",
 			mods = "ALT",
