@@ -65,17 +65,18 @@ if status is-interactive # Commands to run in interactive sessions can go here
     alias wssh="wezterm ssh"
     alias ksshb="kitten ssh"
     alias myip="curl -s https://api.ipify.org"
+    alias gsu="sudo --preserve-env=WAYLAND_DISPLAY,XDG_RUNTIME_DIR"
 
     function csp
-      export HTTP_PROXY=$argv && export HTTPS_PROXY=$HTTP_PROXY&& export http_proxy=$HTTP_PROXY && export https_proxy=$HTTP_PROXY
+        export HTTP_PROXY=$argv && export HTTPS_PROXY=$HTTP_PROXY && export http_proxy=$HTTP_PROXY && export https_proxy=$HTTP_PROXY
     end
     function y
-	set tmp (mktemp -t "yazi-cwd.XXXXXX")
-	yazi $argv --cwd-file="$tmp"
-	if read -z cwd < "$tmp"; and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
-		builtin cd -- "$cwd"
-	end
-	rm -f -- "$tmp"
+        set tmp (mktemp -t "yazi-cwd.XXXXXX")
+        yazi $argv --cwd-file="$tmp"
+        if read -z cwd <"$tmp"; and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+            builtin cd -- "$cwd"
+        end
+        rm -f -- "$tmp"
     end
 
     function mkcd
@@ -88,7 +89,6 @@ end
 export CARGO_BUILD_BUILD_DIR=$HOME/.cache/cargo-build
 source ~/.config/.env
 #source ~/.config/fish/colorized.fish
-
 
 # Added by Antigravity CLI installer
 set -gx PATH "/home/rylan/.local/bin" $PATH

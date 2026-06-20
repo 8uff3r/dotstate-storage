@@ -14,6 +14,7 @@ local autochdir_group = vim.api.nvim_create_augroup("SmartChdir", { clear = true
 local root_markers = {
   "package.json", -- Node.js/NPM project
   "cargo.toml", -- Rust/Cargo project
+  "Cargo.toml", -- Rust/Cargo project
   "go.mod", -- Go project
   "pubspec.yaml", -- Dart/Flutter project
   "pyproject.toml", -- Python/Poetry/PEP 518 project

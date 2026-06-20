@@ -13,18 +13,21 @@
 ---- VARIABLES ----
 -------------------
 local v = require("vars")
+require("events")
 
 ------------------
 ---- MONITORS ----
 ------------------
 
 -- See https://wiki.hypr.land/Configuring/Basics/Monitors/
-hl.monitor({
-	output = "",
-	mode = "preferred",
-	position = "auto",
-	scale = "auto",
-})
+-- hl.monitor({
+-- 	output = "",
+-- 	mode = "preferred",
+-- 	-- mode = "1920x1080@100.00Hz",
+-- 	position = "auto",
+-- 	scale = "auto",
+-- })
+require("monitors")
 
 -------------------
 ---- AUTOSTART ----

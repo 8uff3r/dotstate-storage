@@ -17,7 +17,9 @@ local rules = {
 		opacity = "1.0 override",
 	},
 	-- Float
+	--
 	{ match = { class = "guifetch" }, float = true },
+	{ match = { class = "io.github.maniacx.BudsLink|budslink" }, float = true, group = "deny" },
 	{ match = { class = "yad" }, float = true },
 	{ match = { class = "zenity" }, float = true },
 	{ match = { class = "wev" }, float = true },
@@ -164,6 +166,7 @@ local rules = {
 	-- Apps
 	{ match = { class = "^(org.telegram.desktop)$" }, workspace = "special:special" },
 	{ match = { class = "^(v2rayN)$" }, workspace = "special:special" },
+	{ match = { class = "^(Skirk)$" }, workspace = "special:special" },
 	{ match = { class = "^(Throne)$" }, workspace = "special:special" },
 	{ match = { class = "gephgui-wry" }, float = true },
 	{ match = { class = "^(nvim)$" }, workspace = "1" },
@@ -337,6 +340,11 @@ local rules = {
 		float = true,
 		no_initial_focus = true,
 		group = "deny",
+	},
+	{
+		match = { class = "timr" },
+		size = "0 0",
+		float = true,
 	},
 }
 

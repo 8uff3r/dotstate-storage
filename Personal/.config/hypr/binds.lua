@@ -71,6 +71,7 @@ local binds = {
 	{ mainMod .. " + SHIFT + J", hl.dsp.window.move({ direction = "down" }) },
 
 	{ mainMod .. " + S", hl.dsp.workspace.toggle_special("special") },
+	{ mainMod .. " + M", hl.dsp.workspace.toggle_special("music") },
 	{ mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:special" }) },
 
 	-- Scroll through existing workspaces with mainMod + scroll

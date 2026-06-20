@@ -7,7 +7,14 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "outline_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
   "project_panel": {
+    "dock": "left",
     "hide_gitignore": false,
     "hide_hidden": false,
   },
@@ -41,6 +48,7 @@
   },
   "auto_update": false,
   "git_panel": {
+    "dock": "left",
     "tree_view": true,
     "sort_by_path": true,
   },
