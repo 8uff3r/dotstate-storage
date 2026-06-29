@@ -427,7 +427,7 @@
         "recolourLogo": true
     },
     "notifs": {
-        "actionOnClick": false,
+        "actionOnClick": true,
         "clearThreshold": 0.3,
         "defaultExpireTimeout": 3000,
         "expandThreshold": 20,
