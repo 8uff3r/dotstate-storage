@@ -19,6 +19,7 @@ local root_markers = {
   "pubspec.yaml", -- Dart/Flutter project
   "pyproject.toml", -- Python/Poetry/PEP 518 project
   "mix.exs", -- Elixir/Mix project
+  "xmake.lua",
 }
 
 --- Searches for a project root marker by traversing up the directory tree.

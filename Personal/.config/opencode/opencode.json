@@ -1,0 +1,54 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "omniroute": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "OmniRoute",
+      "options": {
+        "baseURL": "http://localhost:20128/v1",
+        "apiKey": "sk-438187751a49c89b-0feca3-a2bf0cbc"
+      },
+      "models": {
+        "opencode-go/glm-5.2": {
+          "name": "opencode-go/glm-5.2"
+        },
+        "opencode-go/kimi-k2.7-code": {
+          "name": "opencode-go/kimi-k2.7-code"
+        },
+        "opencode-go/mimo-v2.5": {
+          "name": "opencode-go/mimo-v2.5"
+        },
+        "opencode-go/minimax-m3": {
+          "name": "opencode-go/minimax-m3"
+        },
+        "opencode-go/deepseek-v4-pro": {
+          "name": "opencode-go/deepseek-v4-pro"
+        },
+        "fireworks/deepseek-v4-flash": {
+          "name": "fireworks/deepseek-v4-flash"
+        },
+        "ds/deepseek-v4-pro": {
+          "name": "ds/deepseek-v4-pro"
+        },
+        "nara/glm-5.2": {
+          "name": "nara/glm-5.2"
+        },
+        "zmf/deepseek/deepseek-v4-pro": {
+          "name": "zmf/deepseek/deepseek-v4-pro"
+        },
+        "nanogpt/zai-org/glm-5.2:thinking": {
+          "name": "nanogpt/zai-org/glm-5.2:thinking"
+        },
+        "nanogpt/minimax/minimax-latest": {
+          "name": "nanogpt/minimax/minimax-latest"
+        },
+        "nanogpt/moonshotai/kimi-k2.7-code": {
+          "name": "nanogpt/moonshotai/kimi-k2.7-code"
+        },
+        "nanogpt/zai-org/glm-5.2": {
+          "name": "nanogpt/zai-org/glm-5.2"
+        }
+      }
+    }
+  }
+}

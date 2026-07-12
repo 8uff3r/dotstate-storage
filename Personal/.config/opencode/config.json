@@ -1,5 +1,6 @@
 {
   "$schema": "https://opencode.ai/config.json",
+  "plugin": ["@dietrichgebert/ponytail"],
   "permission": {
     "*": "allow"
   },
@@ -72,7 +73,6 @@
       "name": "LmStudio",
       "options": {
         "baseURL": "http://127.0.0.1:2323/v1"
-
       },
       "models": {
         "gemma-3-12b-it-heretic": {
