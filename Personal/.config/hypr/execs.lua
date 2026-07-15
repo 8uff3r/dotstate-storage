@@ -1,7 +1,7 @@
 local v = require("vars")
 
 local cmds = {
-	"gnome-keyring-daemon --start --components=secrets",
+	"gnome-keyring-daemon --start --components=secrets,pkcs11",
 	"/usr/lib/polkit-kde-authentication-agent-1",
 
 	-- Clipboard history
@@ -34,6 +34,7 @@ local cmds = {
 	-- Start shell
 	"caelestia shell -d",
 	"kdeconnect-indicator",
+	"emacs --daemon",
 }
 hl.on("hyprland.start", function()
 	for _, value in ipairs(cmds) do

@@ -71,7 +71,7 @@ local binds = {
 	{ mainMod .. " + SHIFT + J", hl.dsp.window.move({ direction = "down" }) },
 
 	{ mainMod .. " + S", hl.dsp.workspace.toggle_special("special") },
-	{ mainMod .. " + M", hl.dsp.workspace.toggle_special("music") },
+	-- { mainMod .. " + M", hl.dsp.workspace.toggle_special("music") },
 	{ mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:special" }) },
 
 	-- Scroll through existing workspaces with mainMod + scroll
@@ -123,6 +123,10 @@ local binds = {
 	-- { mainMod .. " + R",      hl.dsp.exec_cmd(v.menu) },
 	{ mainMod .. " + Z", hl.dsp.exec_cmd("zed") },
 	{ mainMod .. " + N", hl.dsp.exec_cmd("export IS_NVIM=1 &&" .. v.terminal .. " -e nvim") },
+	{
+		mainMod .. " + M",
+		hl.dsp.exec_cmd("emacsclient -c -a ''"),
+	},
 
 	-- { mainMod .. " + R",       hl.dsp.global("caelestia:launcher") },
 	{ mainMod .. " + R", hl.dsp.exec_cmd("caelestia shell drawers toggle launcher") },
