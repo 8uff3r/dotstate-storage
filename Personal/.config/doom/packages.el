@@ -57,9 +57,6 @@
   :recipe (:host github :repo "8uff3r/vue-ts-mode"))
 
 
-(package! eglot-typescript-preset
-  :recipe (:host github :repo "mwolson/eglot-typescript-preset"))
-
 (package! llm)
 (package! shell-maker)
 (package! acp)
@@ -76,3 +73,6 @@
   :recipe (:host github :repo "manzaltu/claude-code-ide.el"))
 (package! odin-ts-mode
   :recipe (:host github :repo "Sampie159/odin-ts-mode"))
+
+(package! eglot-typescript-preset
+  :recipe (:host github :repo "mwolson/eglot-typescript-preset"))

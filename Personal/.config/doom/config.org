@@ -1,4 +1,4 @@
-#+title: Config
++title: Config
 
 #+property: header-args :tangle yes :results silent :lexical yes
 
@@ -152,56 +152,6 @@ they are implemented.
 (use-package! odin-ts-mode
   :mode "\\.odin\\'")
 
-#+end_src
-
-** Eglot
-#+begin_src elisp :tangle no
-(after! 'eglot
-  (require 'eglot-typescript-preset)
-  (setopt eglot-typescript-preset-vue-lsp-server 'vue-language-server)
-  ;; ponytail: TS 7 removed tsserver.js, typescript-language-server needs TS 5.x.
-  ;; Revisit when tsserver deprecation is handled upstream.
-  (let ((tslib-dir "/usr/lib/node_modules/@vtsls/language-server/node_modules/typescript/lib"))
-    (setopt eglot-typescript-preset-tsdk tslib-dir)
-    (add-to-list 'eglot-server-programs
-                 `((typescript-ts-mode tsx-ts-mode)
-                   "typescript-language-server" "--stdio"
-                   :initializationOptions
-                   (:tsserver (:path ,(expand-file-name "tsserver.js" tslib-dir)))))))
-#+end_src
-
-** LSP
-#+begin_src elisp :tangle no
-;; ponytail: TS 7 removed tsserver.js, override lsp-mode's typescript dependency
-;; to point at TS 5.9.3 (bundled with @vtsls/language-server) which still has it.
-;; Must run *after* lsp-javascript loads, which re-defines the dependency at top-level.
-(after! lsp-javascript
-  (lsp-dependency 'typescript
-                  '(:system "/usr/lib/node_modules/@vtsls/language-server/node_modules/typescript/lib/tsserver.js"))
-  (setq lsp-typescript-tsdk
-        "/usr/lib/node_modules/@vtsls/language-server/node_modules/typescript/lib"))
-(after! lsp-volar
-  ;; Tell lsp-volar exactly where the typescript plugin is so it can inject it into ts-ls
-  ;; Verify this path on your system — npm might flatten it to just /usr/lib/node_modules/@vue/typescript-plugin
-  (setq lsp-volar-location-for-typescript-plugin
-        "/usr/lib/node_modules/@vue/language-server/node_modules/@vue/typescript-plugin"))
-
-(after! lsp-mode
-  ;; Keep semgrep disabled
-  (setq lsp-disabled-clients '(semgrep-ls))
-  (setq-hook! 'vue-ts-mode-hook lsp-disabled-clients '(semgrep-ls deno-ls))
-  ;; Explicitly ensure lsp-mode doesn't try to use standard tsserver for Vue
-  ;; and relies on vue-semantic-server (Volar) instead.
-  (add-to-list 'lsp-language-id-configuration '(vue-ts-mode . "vue")))
-
-(use-package lsp-mode
-  :custom
-  (lsp-completion-provider :none)
-  :config
-  ;; vue-ts-mode will now correctly trigger Volar instead of just vtsls
-  (add-hook 'vue-ts-mode-local-vars-hook #'lsp!)
-  (add-hook 'typescript-ts-mode-local-vars-hook #'lsp!)
-  (add-hook 'odin-ts-mode-local-vars-hook #'lsp!))
 #+end_src
 
 
@@ -402,6 +352,21 @@ they are implemented.
 (setq-hook! 'odin-ts-mode +format-with 'odinfmt)
 #+end_src
 
+
+** Eglot
+#+begin_src elisp
+;; ponytail: eglot-typescript-preset wires Vue/TS/TSX/CSS eglot clients + hooks
+;; automatically on Eglot load, including vue-ts-mode and hybridmode TSDK setup.
+(use-package! eglot-typescript-preset
+  :after eglot
+  :config
+  (eglot-typescript-preset-setup)
+  (setopt eglot-typescript-preset-vue-lsp-server 'rass)
+  (setopt eglot-typescript-preset-vue-rass-tools
+          '(vue-language-server typescript-language-server
+            tailwindcss-language-server))
+  )
+#+end_src
 
 ** Ghostel
 #+begin_src elisp

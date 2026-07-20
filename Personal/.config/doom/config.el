@@ -255,6 +255,18 @@
 (setq-hook! 'vue-ts-mode +format-with 'oxfmt)
 (setq-hook! 'odin-ts-mode +format-with 'odinfmt)
 
+;; ponytail: eglot-typescript-preset wires Vue/TS/TSX/CSS eglot clients + hooks
+;; automatically on Eglot load, including vue-ts-mode and hybridmode TSDK setup.
+(use-package! eglot-typescript-preset
+  :after eglot
+  :config
+  (eglot-typescript-preset-setup)
+  (setopt eglot-typescript-preset-vue-lsp-server 'rass)
+  (setopt eglot-typescript-preset-vue-rass-tools
+          '(vue-language-server typescript-language-server
+            tailwindcss-language-server))
+  )
+
 (use-package! ghostel
   :custom
   (ghostel-shell "/usr/bin/fish")

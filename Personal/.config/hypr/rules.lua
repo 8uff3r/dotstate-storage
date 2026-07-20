@@ -191,9 +191,6 @@ local rules = {
 	-- mpv
 	{ match = { class = "mpv" }, group = "deny", float = true, size = "960 540" },
 
-	-- org.freedesktop.impl.portal.desktop.kde
-	{ match = { class = "org.freedesktop.impl.portal.desktop.kde" }, float = true, size = "740 490" },
-
 	-- brave file picker
 	{ match = { class = "^(brave-browser)$", title = "^(Open File)$|^(Save File)$" }, float = true },
 
