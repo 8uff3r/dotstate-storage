@@ -39,6 +39,9 @@
         "zai-org/glm-5": {
           "name": "GLM 5"
         },
+        "zai-org/glm-5.2": {
+          "name": "GLM 5.2"
+        },
         "stepfun-ai/step-3.5-flash:thinking": {
           "name": "Step 3.5 Flash Thinking"
         },

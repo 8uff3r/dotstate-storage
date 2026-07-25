@@ -113,6 +113,7 @@ local rules = {
 		group = "deny",
 		suppress_event = "fullscreen",
 		rounding = 10,
+		workspace = 3,
 	},
 	{
 		match = { class = "steam", title = "Friends List" },
@@ -129,6 +130,7 @@ local rules = {
 		group = "deny",
 		idle_inhibit = "always",
 		fullscreen = true,
+		workspace = 4,
 	},
 	-- Tearing
 	{ match = { title = ".*\\.exe" }, immediate = true },
@@ -164,7 +166,7 @@ local rules = {
 	{ match = { pin = false, float = true }, border_color = "rgb(349CCF)" },
 
 	-- Apps
-	{ match = { class = "^(org.telegram.desktop)$" }, workspace = "special:special" },
+	{ match = { class = "^(org.telegram.desktop)$" }, workspace = "special:special", size = "783 411" },
 	{ match = { class = "^(v2rayN)$" }, workspace = "special:special" },
 	{ match = { class = "^(Skirk)$" }, workspace = "special:special" },
 	{ match = { class = "^(Throne)$" }, workspace = "special:special" },
@@ -177,7 +179,6 @@ local rules = {
 	{ match = { class = "^(org.kde.polkit-kde-authentication-agent-1)$" }, float = true },
 	{ match = { class = "^(zenity)$" }, float = true },
 	{ match = { class = "krunner" }, float = true },
-	{ match = { title = "Telegram" }, opacity = "0.95" },
 	{ match = { title = "QQ" }, opacity = "0.95" },
 	{ match = { class = "kitty" }, animation = "slide right" },
 	{ match = { class = "alacritty" }, animation = "slide right" },
