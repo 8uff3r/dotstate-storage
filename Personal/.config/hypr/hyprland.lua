@@ -9,6 +9,10 @@
 -- Create your files separately and then require them like this:
 -- require("myColors")
 
+local home = os.getenv("HOME")
+local current_path = os.getenv("PATH") or ""
+
+hl.env("PATH", home .. "/.local/share/mise/shims:" .. current_path)
 -------------------
 ---- VARIABLES ----
 -------------------

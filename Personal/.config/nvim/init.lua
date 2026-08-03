@@ -22,3 +22,8 @@ vim.filetype.add({
     slint = "slint",
   },
 })
+vim.diagnostic.config({
+  float = {
+    source = true,
+  },
+})

@@ -25,9 +25,9 @@
     }
   },
   "provider": {
-    "nanogpt": {
+    "nanogpt-c": {
       "npm": "@ai-sdk/openai-compatible",
-      "name": "NanoGPT",
+      "name": "NanoGPT-C",
       "options": {
         "baseURL": "https://nano-gpt.com/api/v1",
         "apiKey": "{env:NANOGPT_API_KEY}"
