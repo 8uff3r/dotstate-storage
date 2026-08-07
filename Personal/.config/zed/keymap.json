@@ -178,7 +178,7 @@
   },
   {
     "bindings": {
-      "ctrl-?": "agent::Toggle"
+      "alt-/": "agent::Toggle"
     }
   }
 ]

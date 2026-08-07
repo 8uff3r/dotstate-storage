@@ -62,3 +62,4 @@ x-scheme-handler/opencode=ai.opencode.desktop.desktop
 x-scheme-handler/shiru=shiru.desktop
 x-scheme-handler/unknown=brave-browser.desktop
 x-scheme-handler/omniget=omniget-handler.desktop
+x-scheme-handler/pulsar=pulsar-handler.desktop

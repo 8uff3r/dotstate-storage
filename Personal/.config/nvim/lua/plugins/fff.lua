@@ -49,6 +49,7 @@ return {
 
   {
     "dmtrKovalenko/fold-imports.nvim",
+    enabled = false,
     opts = {
       languages = {
         typescript = {

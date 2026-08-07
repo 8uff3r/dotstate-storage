@@ -14,11 +14,12 @@ Environment="HERMES_HOME=/home/rylan/.hermes"
 Restart=always
 RestartSec=5
 RestartForceExitStatus=75
+RestartPreventExitStatus=78
 KillMode=mixed
 KillSignal=SIGTERM
 ExecReload=/bin/kill -USR1 $MAINPID
 ExecStopPost=-/home/rylan/.hermes/hermes-agent/venv/bin/python -m gateway.cgroup_cleanup
-TimeoutStopSec=90
+TimeoutStopSec=60
 StandardOutput=journal
 StandardError=journal
 
