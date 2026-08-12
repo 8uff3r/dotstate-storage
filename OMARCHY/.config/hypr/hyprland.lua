@@ -30,7 +30,8 @@ require("default.hypr.toggles")
 -- o.window("qemu", { workspace = "5" })
 
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
-hl.bind(
+o.bind(
     mainMod .. " + ALT + M",
+    "Kill the current Hyprland session",
     hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'")
 )

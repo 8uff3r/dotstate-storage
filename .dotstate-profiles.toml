@@ -38,13 +38,14 @@ synced_files = [
 packages = []
 
 [[profiles]]
-name = "TUF"
+name = "OMARCHY"
 synced_files = [
     ".config/alacritty",
     ".config/foot",
     ".config/hypr",
     ".config/nvim",
-    ".config/omarchy",
     ".config/starship.toml",
+    ".config/systemd/user/kana-switch.service",
+    ".config/systemd/user/kanata.service",
 ]
 packages = []
