@@ -49,5 +49,6 @@ synced_files = [
     ".config/starship.toml",
     ".config/systemd/user/kana-switch.service",
     ".config/systemd/user/kanata.service",
+    ".config/zed",
 ]
 packages = []
