@@ -41,6 +41,7 @@ packages = []
 name = "OMARCHY"
 synced_files = [
     ".config/alacritty",
+    ".config/fish",
     ".config/foot",
     ".config/hypr",
     ".config/kanata",
