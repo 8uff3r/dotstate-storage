@@ -36,3 +36,15 @@ synced_files = [
     "scripts/konsole-nvim.sh",
 ]
 packages = []
+
+[[profiles]]
+name = "TUF"
+synced_files = [
+    ".config/alacritty",
+    ".config/foot",
+    ".config/hypr",
+    ".config/nvim",
+    ".config/omarchy",
+    ".config/starship.toml",
+]
+packages = []
