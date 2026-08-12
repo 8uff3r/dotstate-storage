@@ -43,6 +43,7 @@ synced_files = [
     ".config/alacritty",
     ".config/foot",
     ".config/hypr",
+    ".config/kanata",
     ".config/nvim",
     ".config/starship.toml",
     ".config/systemd/user/kana-switch.service",
