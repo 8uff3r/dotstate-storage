@@ -46,108 +46,117 @@ local into_or_out_of_group = function(dir)
     end
 end
 
----@type { [1]: string, [2]: function, [3]: HL.BindOptions?}[]
+---@type { [1]: string, [2]: function, [3]: HL.BindOptions?, [4]: string?}[]
 local binds = {
     {
         "CTRL + F2",
         hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+"),
         { locked = true, repeating = true },
+        "Increase volume (+2%)",
     },
     {
         "CTRL + F1",
         hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-"),
         { locked = true, repeating = true },
+        "Decrease volume (-2%)",
     },
 
     -- Toggle Grouping for active window
-    { mainMod .. " + CTRL + g",   hl.dsp.group.toggle() },
+    { mainMod .. " + CTRL + g",   hl.dsp.group.toggle(), "Toggle window group" },
     -- Focus next window in group
-    { "ALT + L",                  hl.dsp.group.next() },
+    { "ALT + L",                  hl.dsp.group.next(), "Focus next grouped window" },
     -- Focus previous window in group
-    { "ALT + H",                  hl.dsp.group.prev() },
+    { "ALT + H",                  hl.dsp.group.prev(), "Focus previous grouped window" },
     -- Swap with next window in group
-    { "ALT + SHIFT + L",          hl.dsp.group.move_window({ forward = true }) },
+    { "ALT + SHIFT + L",          hl.dsp.group.move_window({ forward = true }), "Swap with next grouped window" },
     -- Swap with previous window in group
-    { "ALT + SHIFT + H",          hl.dsp.group.move_window({ forward = false }) },
+    { "ALT + SHIFT + H",          hl.dsp.group.move_window({ forward = false }), "Swap with previous grouped window" },
 
     -- Move window in/out of group in/to left
-    { mainMod .. " + CTRL + H",   into_or_out_of_group("left") },
+    { mainMod .. " + CTRL + H",   into_or_out_of_group("left"), "Move in/out of group (left)" },
     -- Move window in/out of group in/to right
-    { mainMod .. " + CTRL + L",   into_or_out_of_group("right") },
+    { mainMod .. " + CTRL + L",   into_or_out_of_group("right"), "Move in/out of group (right)" },
     -- Move window + in/out of group in/to up
-    { mainMod .. " + CTRL + K",   into_or_out_of_group("up") },
+    { mainMod .. " + CTRL + K",   into_or_out_of_group("up"), "Move in/out of group (up)" },
     -- Move window + in/out of group in/to down
-    { mainMod .. " + CTRL + J",   into_or_out_of_group("down") },
+    { mainMod .. " + CTRL + J",   into_or_out_of_group("down"), "Move in/out of group (down)" },
 
     -- Move focus with mainMod + arrow keys
-    { mainMod .. " + H",          hl.dsp.focus({ direction = "left" }) },
-    { mainMod .. " + L",          hl.dsp.focus({ direction = "right" }) },
-    { mainMod .. " + K",          hl.dsp.focus({ direction = "up" }) },
-    { mainMod .. " + J",          hl.dsp.focus({ direction = "down" }) },
+    { mainMod .. " + H",          hl.dsp.focus({ direction = "left" }), "Focus window left" },
+    { mainMod .. " + L",          hl.dsp.focus({ direction = "right" }), "Focus window right" },
+    { mainMod .. " + K",          hl.dsp.focus({ direction = "up" }), "Focus window up" },
+    { mainMod .. " + J",          hl.dsp.focus({ direction = "down" }), "Focus window down" },
 
-    { mainMod .. " + SHIFT + H",  hl.dsp.window.move({ direction = "left" }) },
-    { mainMod .. " + SHIFT + L",  hl.dsp.window.move({ direction = "right" }) },
-    { mainMod .. " + SHIFT + K",  hl.dsp.window.move({ direction = "up" }) },
-    { mainMod .. " + SHIFT + J",  hl.dsp.window.move({ direction = "down" }) },
+    { mainMod .. " + SHIFT + H",  hl.dsp.window.move({ direction = "left" }), "Move window left" },
+    { mainMod .. " + SHIFT + L",  hl.dsp.window.move({ direction = "right" }), "Move window right" },
+    { mainMod .. " + SHIFT + K",  hl.dsp.window.move({ direction = "up" }), "Move window up" },
+    { mainMod .. " + SHIFT + J",  hl.dsp.window.move({ direction = "down" }), "Move window down" },
 
-    { mainMod .. " + S",          hl.dsp.workspace.toggle_special("special") },
-    { mainMod .. " + M",          hl.dsp.exec_cmd("mousefree") },
-    { mainMod .. " + SHIFT + S",  hl.dsp.window.move({ workspace = "special:special" }) },
+    { mainMod .. " + S",          hl.dsp.workspace.toggle_special("special"), "Toggle scratchpad workspace" },
+    { mainMod .. " + M",          hl.dsp.exec_cmd("mousefree"), "Toggle Mousefree mode" },
+    { mainMod .. " + SHIFT + S",  hl.dsp.window.move({ workspace = "special:special" }), "Move window to scratchpad" },
 
     -- Scroll through existing workspaces with mainMod + scroll
-    { mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }) },
-    { mainMod .. " + mouse_up",   hl.dsp.focus({ workspace = "e-1" }) },
+    { mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }), "Next workspace" },
+    { mainMod .. " + mouse_up",   hl.dsp.focus({ workspace = "e-1" }), "Previous workspace" },
 
     -- Move/resize windows with mainMod + LMB/RMB and dragging
     {
         mainMod .. " + mouse:272",
         hl.dsp.window.drag(),
         { mouse = true },
+        "Drag window",
     },
     {
         mainMod .. " + mouse:273",
         hl.dsp.window.resize(),
         { mouse = true },
+        "Resize window with mouse",
     },
 
     {
         "CTRL + SHIFT + L",
         hl.dsp.window.resize({ x = 15, y = 0, relative = true }),
         { repeating = true },
+        "Expand window right",
     },
     {
         "CTRL + SHIFT + H",
         hl.dsp.window.resize({ x = -15, y = 0, relative = true }),
         { repeating = true },
+        "Shrink window left",
     },
     {
         "CTRL + SHIFT + K",
         hl.dsp.window.resize({ x = 0, y = 15, relative = true }),
         { repeating = true },
+        "Expand window down",
     },
     {
         "CTRL + SHIFT + J",
         hl.dsp.window.resize({ x = 0, y = -15, relative = true }),
         { repeating = true },
+        "Shrink window up",
     },
-    { mainMod .. " + Escape", hl.dsp.focus({ workspace = "previous" }) },
+    { mainMod .. " + Escape", hl.dsp.focus({ workspace = "previous" }), "Focus previous workspace" },
 
-    { mainMod .. " + X",      hl.dsp.window.float({ action = "toggle" }) },
-    { mainMod .. " + P",      hl.dsp.window.pseudo() },
-    { mainMod .. " + C",      hl.dsp.window.close() },
-    { mainMod .. " + F",      hl.dsp.window.fullscreen({ mode = "fullscreen" }) },
-    { mainMod .. " + D",      hl.dsp.window.fullscreen({ mode = "maximized" }) },
+    { mainMod .. " + X",      hl.dsp.window.float({ action = "toggle" }), "Toggle floating window" },
+    { mainMod .. " + P",      hl.dsp.window.pseudo(), "Toggle pseudo-tiling" },
+    { mainMod .. " + C",      hl.dsp.window.close(), "Close focused window" },
+    { mainMod .. " + F",      hl.dsp.window.fullscreen({ mode = "fullscreen" }), "Toggle full screen" },
+    { mainMod .. " + D",      hl.dsp.window.fullscreen({ mode = "maximized" }), "Toggle maximized" },
 
     -- APPS
-    { mainMod .. " + E",      hl.dsp.exec_cmd(v.fileManager) },
-    -- { mainMod .. " + R",      hl.dsp.exec_cmd(v.menu) },
-    { mainMod .. " + Z",      hl.dsp.exec_cmd(v.editor) },
-    { mainMod .. " + N",      hl.dsp.exec_cmd("export IS_NVIM=1 &&" .. v.terminal .. " -e nvim") },
+    { mainMod .. " + E",      hl.dsp.exec_cmd(v.fileManager), "Launch File Manager" },
+    -- { mainMod .. " + R",      hl.dsp.exec_cmd(v.menu), "Launch App Launcher" },
+    { mainMod .. " + Z",      hl.dsp.exec_cmd(v.editor), "Launch Code Editor" },
+    { mainMod .. " + N",      hl.dsp.exec_cmd("export IS_NVIM=1 &&" .. v.terminal .. " -e nvim"), "Launch Neovim" },
 
-    { mainMod .. " + Return", hl.dsp.exec_cmd(v.terminal) },
+    { mainMod .. " + Return", hl.dsp.exec_cmd(v.terminal), "Open Terminal" },
     {
         mainMod .. " + SHIFT + Return",
         hl.dsp.exec_cmd("wezterm -e nvim -c 'lua Snacks.terminal.focus(nil, { cwd = LazyVim.root() }) vim.cmd.only()'"),
+        "Open Neovim terminal in root directory",
     },
 
     -- Laptop multimedia keys for volume and LCD brightness
@@ -155,61 +164,70 @@ local binds = {
         "XF86AudioRaiseVolume",
         hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"),
         { locked = true, repeating = true },
+        "Increase volume (+5%)",
     },
     {
         "XF86AudioLowerVolume",
         hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),
         { locked = true, repeating = true },
+        "Decrease volume (-5%)",
     },
     {
         "XF86AudioMute",
         hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"),
         { locked = true, repeating = true },
+        "Toggle audio mute",
     },
     {
         "XF86AudioMicMute",
         hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"),
         { locked = true, repeating = true },
+        "Toggle mic mute",
     },
     {
         "XF86MonBrightnessUp",
         hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"),
         { locked = true, repeating = true },
+        "Increase brightness (+5%)",
     },
     {
         "XF86MonBrightnessDown",
         hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"),
         { locked = true, repeating = true },
+        "Decrease brightness (-5%)",
     },
     {
         "XF86AudioNext",
         hl.dsp.exec_cmd("playerctl next"),
         { locked = true },
+        "Next media track",
     },
     {
         "XF86AudioPause",
         hl.dsp.exec_cmd("playerctl play-pause"),
         { locked = true },
+        "Pause media",
     },
     {
         "XF86AudioPlay",
         hl.dsp.exec_cmd("playerctl play-pause"),
         { locked = true },
+        "Play/Pause media",
     },
     {
         "XF86AudioPrev",
         hl.dsp.exec_cmd("playerctl previous"),
         { locked = true },
+        "Previous media track",
     },
 
-    { mainMod .. " + Space", hl.dsp.exec_cmd("hyprctl switchxkblayout kanata next"), { locked = true } },
-
+    { mainMod .. " + Space", hl.dsp.exec_cmd("hyprctl switchxkblayout kanata next"), { locked = true }, "Switch keyboard layout" },
 }
 
 
 
 for _, value in ipairs(binds) do
-    o.bind(value[1], nil, value[2], value[3])
+    o.bind(value[1], value[4], value[2], value[3])
 end
 
 -- Switch workspaces with mainMod + [0-9]
@@ -224,10 +242,12 @@ end
 --------------------------
 ---- OMARCHY Bindings ----
 --------------------------
--- Bindings copied over from Omarchy default bindings
-o.bind("SUPER + SHIFT + R", "Omarchy menu", "omarchy-menu toggle root")
+-- Bindings copied over (with modifications to the keybinds) from Omarchy default bindings
+o.bind("ALT + X", "Omarchy menu", "omarchy-menu toggle root")
 o.bind("SUPER + R", "Omarchy menu", "omarchy-menu toggle apps")
 o.bind("SUPER + V", "Clipboard manager", "omarchy-shell shell toggle omarchy.clipboard")
 o.bind("SUPER + F2", "Keybindings", "omarchy-menu-keybindings")
 o.bind("SUPER + ALT + K", "Tmux keybindings", "omarchy-menu-tmux-keybindings")
 o.bind("SUPER + CTRL + K", "Herdr keybindings", "omarchy-menu-herdr-keybindings")
+o.bind("SUPER + Q", "Power menu", "omarchy-menu toggle system", { locked = true })
+o.bind("ALT + F4", "Lock system", "omarchy-system-lock")
