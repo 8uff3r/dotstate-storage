@@ -5,57 +5,58 @@
 -- See https://wiki.hypr.land/Configuring/Basics/Variables/#input
 hl.config({
     cursor = {
-		hotspot_padding = 1,
-	},
-	binds = {
-		scroll_event_delay = 0,
-	},
-  input = {
---     -- Use multiple keyboard layouts and switch between them with Left Alt + Right Alt.
-        kb_layout = "us,ir",
-		kb_variant = "",
-		kb_model = "",
-		kb_options = "",
-		kb_rules = "",
---     kb_options = "compose:caps,shift:both_capslock_cancel,grp:alts_toggle",
-        repeat_delay = 250,
-		repeat_rate = 35,
-
-		focus_on_close = 1,
---
---     -- Use a specific keyboard variant if needed (e.g. intl for international keyboards).
---     kb_variant = "intl",
---
---     -- Change speed of keyboard repeat.
---     repeat_rate = 40,
---     repeat_delay = 250,
---
-    -- Start with numlock on by default.
-    numlock_by_default = true,
---
---     -- Increase sensitivity for mouse/trackpad (default: 0).
---     sensitivity = 0.35,
---
---     -- Turn off mouse acceleration (default: adaptive).
---     accel_profile = "flat",
-    follow_mouse = 1,
-    touchpad = {
-      -- Use natural (inverse) scrolling.
-      natural_scroll = true,
---
---       -- Use two-finger clicks for right-click instead of lower-right corner.
---       clickfinger_behavior = true,
---
---       -- Control the speed of your scrolling.
---       scroll_factor = 0.4,
---
---       -- Enable the touchpad while typing.
---       disable_while_typing = false,
---
---       -- Left-click-and-drag with three fingers.
---       drag_3fg = 1,
+        hotspot_padding = 1,
+        no_hardware_cursors = true
     },
-  },
+    binds = {
+        scroll_event_delay = 0,
+    },
+    input = {
+        --     -- Use multiple keyboard layouts and switch between them with Left Alt + Right Alt.
+        kb_layout = "us,ir",
+        kb_variant = "",
+        kb_model = "",
+        kb_options = "",
+        kb_rules = "",
+        --     kb_options = "compose:caps,shift:both_capslock_cancel,grp:alts_toggle",
+        repeat_delay = 250,
+        repeat_rate = 35,
+
+        focus_on_close = 1,
+        --
+        --     -- Use a specific keyboard variant if needed (e.g. intl for international keyboards).
+        --     kb_variant = "intl",
+        --
+        --     -- Change speed of keyboard repeat.
+        --     repeat_rate = 40,
+        --     repeat_delay = 250,
+        --
+        -- Start with numlock on by default.
+        numlock_by_default = true,
+        --
+        --     -- Increase sensitivity for mouse/trackpad (default: 0).
+        --     sensitivity = 0.35,
+        --
+        --     -- Turn off mouse acceleration (default: adaptive).
+        --     accel_profile = "flat",
+        follow_mouse = 1,
+        touchpad = {
+            -- Use natural (inverse) scrolling.
+            natural_scroll = true,
+            --
+            --       -- Use two-finger clicks for right-click instead of lower-right corner.
+            --       clickfinger_behavior = true,
+            --
+            --       -- Control the speed of your scrolling.
+            --       scroll_factor = 0.4,
+            --
+            --       -- Enable the touchpad while typing.
+            --       disable_while_typing = false,
+            --
+            --       -- Left-click-and-drag with three fingers.
+            --       drag_3fg = 1,
+        },
+    },
 })
 
 -- App-specific touchpad scroll speeds.
