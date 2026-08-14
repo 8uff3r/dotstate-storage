@@ -1,0 +1,137 @@
+{
+  "bar": {
+    "position": "top",
+    "transparent": false,
+    "centerAnchor": "omarchy.clock",
+    "layout": {
+      "left": [
+        {
+          "id": "omarchy.menu"
+        },
+        {
+          "id": "hark"
+        },
+        {
+          "id": "omarchy.workspaces"
+        },
+        {
+          "id": "dev.deoxizn.keybind-manager"
+        }
+      ],
+      "center": [
+        {
+          "id": "quickshell.spotify",
+          "deviceName": "Omarchy Spotify",
+          "idleShutdownMinutes": 15,
+          "showTrackTitle": "On",
+          "audioQuality": "320 kbps",
+          "searchHistory": "[]",
+          "sessionState": "{\"tab\":\"home\",\"searchText\":\"\",\"searchType\":\"track\",\"libraryType\":\"tracks\",\"homeType\":\"recent\",\"libraryFilter\":\"\",\"librarySort\":\"default\",\"playlistFilter\":\"\",\"playlistSort\":\"default\",\"detailFilter\":\"\",\"detailSort\":\"default\",\"artistSearchText\":\"\",\"scrollPositions\":{\"home:recent\":0,\"search:track\":0,\"library:tracks\":0,\"detail:spotify:album:1ur6fqtyCOxXYKPaaZ24Sk\":0,\"detail:spotify:album:6uw4Q6VG4WnwEfDSUWMW02\":0,\"detail:spotify:album:3QkffLjHLnGMUgMAvrOgrs\":0,\"detail:spotify:album:01GR4NL5O5CZM51k0aejKD\":0,\"discover\":0,\"detail:spotify:playlist:37i9dQZEVXbgm4sxAdwuhQ\":0},\"detailItem\":null,\"selectedPlaylistId\":\"\",\"lastRadioPlaylist\":null}"
+        },
+        {
+          "id": "omarchy.indicators"
+        },
+        {
+          "id": "omarchy.clock",
+          "format": "dddd HH:mm",
+          "formatAlt": "d MMMM 'W'ww yyyy",
+          "verticalFormat": "HH\n—\nmm"
+        },
+        {
+          "id": "omarchy.keyboard-layout"
+        },
+        {
+          "id": "omarchy.weather"
+        },
+        {
+          "id": "dizziee.opencode-model-usage"
+        },
+        {
+          "id": "omarchy.system-update"
+        }
+      ],
+      "right": [
+        {
+          "id": "omarchy.tray"
+        },
+        {
+          "id": "matjam.omawall",
+          "displayConfig": {
+            "all": {
+              "folder": "/home/rylan/Pictures/Wallpapers",
+              "recursive": true,
+              "mode": "single",
+              "pinned": "/home/rylan/Pictures/Wallpapers/SB2/HKKyoa1bkAAYG1a.jpg",
+              "scaling": "zoom"
+            }
+          },
+          "themeMode": "dark",
+          "autoTheme": false
+        },
+        {
+          "id": "perfektnacht.controller-launcher",
+          "device": "/dev/input/event27",
+          "summonButton": "start"
+        },
+        {
+          "id": "io.github.bmontythe3rd.display-manager"
+        },
+        {
+          "id": "stappmus.activity-monitor"
+        },
+        {
+          "id": "bt.codecs"
+        },
+        {
+          "id": "omarchy.agents"
+        },
+        {
+          "id": "omarchy.bluetooth"
+        },
+        {
+          "id": "omarchy.network"
+        },
+        {
+          "id": "omarchy.audio"
+        },
+        {
+          "id": "omarchy.monitor"
+        },
+        {
+          "id": "omarchy.power"
+        }
+      ]
+    }
+  },
+  "idle": {
+    "lock": 300,
+    "screensaver": 150
+  },
+  "plugins": [
+    {
+      "id": "com.aktivesolutions.bw-vault"
+    },
+    {
+      "id": "nosignal.network-scan"
+    },
+    {
+      "id": "b.okomart"
+    },
+    {
+      "id": "omni"
+    },
+    {
+      "id": "cliamp"
+    },
+    {
+      "id": "shell.settings"
+    }
+  ],
+  "version": 1,
+  "disabledPlugins": [
+    "omarchy.background"
+  ],
+  "cloneSourceRestores": [
+    "matjam.omawall"
+  ]
+}

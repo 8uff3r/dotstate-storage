@@ -42,10 +42,12 @@ name = "OMARCHY"
 synced_files = [
     ".config/alacritty",
     ".config/fish",
+    ".config/fontconfig",
     ".config/foot",
     ".config/hypr",
     ".config/kanata",
     ".config/nvim",
+    ".config/omarchy/shell.json",
     ".config/qtengine",
     ".config/starship.toml",
     ".config/systemd/user/kana-switch.service",
