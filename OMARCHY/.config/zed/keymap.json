@@ -68,7 +68,7 @@
     },
   },
   {
-    "context": "Terminal",
+    "context": "Terminal && !AgentPanel",
     "bindings": {
       "ctrl-h": "pane::ActivatePreviousItem",
       "ctrl-l": "pane::ActivateNextItem",
@@ -162,23 +162,23 @@
   },
   {
     "bindings": {
-      "alt-o": "workspace::Open"
-    }
+      "alt-o": "workspace::Open",
+    },
   },
   {
     "unbind": {
-      "open": "workspace::Open"
-    }
+      "open": "workspace::Open",
+    },
   },
   {
     "context": "Workspace",
     "unbind": {
-      "ctrl-?": "agent::ToggleFocus"
-    }
+      "ctrl-?": "agent::ToggleFocus",
+    },
   },
   {
     "bindings": {
-      "alt-/": "agent::Toggle"
-    }
-  }
+      "alt-/": "agent::Toggle",
+    },
+  },
 ]
