@@ -1,4 +1,9 @@
 {
+  "version": 1,
+  "idle": {
+    "screensaver": 150,
+    "lock": 300
+  },
   "bar": {
     "position": "top",
     "transparent": false,
@@ -9,16 +14,16 @@
           "id": "omarchy.menu"
         },
         {
-          "id": "hark"
-        },
-        {
           "id": "omarchy.workspaces"
         },
         {
-          "id": "dev.deoxizn.keybind-manager"
+          "id": "robzolkos.github"
         }
       ],
       "center": [
+        {
+          "id": "omarchy.indicators"
+        },
         {
           "id": "quickshell.spotify",
           "deviceName": "Omarchy Spotify",
@@ -26,10 +31,7 @@
           "showTrackTitle": "On",
           "audioQuality": "320 kbps",
           "searchHistory": "[]",
-          "sessionState": "{\"tab\":\"home\",\"searchText\":\"\",\"searchType\":\"track\",\"libraryType\":\"tracks\",\"homeType\":\"recent\",\"libraryFilter\":\"\",\"librarySort\":\"default\",\"playlistFilter\":\"\",\"playlistSort\":\"default\",\"detailFilter\":\"\",\"detailSort\":\"default\",\"artistSearchText\":\"\",\"scrollPositions\":{\"home:recent\":0,\"search:track\":0,\"library:tracks\":0,\"detail:spotify:album:1ur6fqtyCOxXYKPaaZ24Sk\":0,\"detail:spotify:album:6uw4Q6VG4WnwEfDSUWMW02\":0,\"detail:spotify:album:3QkffLjHLnGMUgMAvrOgrs\":0,\"detail:spotify:album:01GR4NL5O5CZM51k0aejKD\":0,\"discover\":0,\"detail:spotify:playlist:37i9dQZEVXbgm4sxAdwuhQ\":0},\"detailItem\":null,\"selectedPlaylistId\":\"\",\"lastRadioPlaylist\":null}"
-        },
-        {
-          "id": "omarchy.indicators"
+          "sessionState": "{\"tab\":\"queue\",\"searchText\":\"\",\"searchType\":\"track\",\"libraryType\":\"tracks\",\"homeType\":\"recent\",\"libraryFilter\":\"\",\"librarySort\":\"default\",\"playlistFilter\":\"\",\"playlistSort\":\"default\",\"detailFilter\":\"\",\"detailSort\":\"default\",\"artistSearchText\":\"\",\"scrollPositions\":{\"home:recent\":0,\"discover\":0,\"detail:spotify:playlist:37i9dQZEVXbgm4sxAdwuhQ\":0,\"playlist:\":0,\"library:tracks\":0},\"detailItem\":null,\"selectedPlaylistId\":\"\",\"lastRadioPlaylist\":null}"
         },
         {
           "id": "omarchy.clock",
@@ -44,7 +46,11 @@
           "id": "omarchy.weather"
         },
         {
-          "id": "dizziee.opencode-model-usage"
+          "id": "esegnorelli.omacapy",
+          "panelSide": "center"
+        },
+        {
+          "id": "local.opencode-go"
         },
         {
           "id": "omarchy.system-update"
@@ -55,29 +61,16 @@
           "id": "omarchy.tray"
         },
         {
-          "id": "matjam.omawall",
-          "displayConfig": {
-            "all": {
-              "folder": "/home/rylan/Pictures/Wallpapers",
-              "recursive": true,
-              "mode": "single",
-              "pinned": "/home/rylan/Pictures/Wallpapers/SB2/HKKyoa1bkAAYG1a.jpg",
-              "scaling": "zoom"
-            }
-          },
-          "themeMode": "dark",
-          "autoTheme": false
+          "id": "io.github.elynch303.fan-monitor"
         },
         {
-          "id": "perfektnacht.controller-launcher",
-          "device": "/dev/input/event27",
-          "summonButton": "start"
+          "id": "hl.peripheral_battery"
         },
         {
           "id": "io.github.bmontythe3rd.display-manager"
         },
         {
-          "id": "stappmus.activity-monitor"
+          "id": "matjam.omawall"
         },
         {
           "id": "bt.codecs"
@@ -95,30 +88,17 @@
           "id": "omarchy.audio"
         },
         {
-          "id": "omarchy.monitor"
+          "id": "omarchy.power"
         },
         {
-          "id": "omarchy.power"
+          "id": "omarchy.monitor"
         }
       ]
     }
   },
-  "idle": {
-    "lock": 300,
-    "screensaver": 150
-  },
   "plugins": [
     {
-      "id": "com.aktivesolutions.bw-vault"
-    },
-    {
-      "id": "nosignal.network-scan"
-    },
-    {
       "id": "b.okomart"
-    },
-    {
-      "id": "omni"
     },
     {
       "id": "cliamp"
@@ -127,7 +107,6 @@
       "id": "shell.settings"
     }
   ],
-  "version": 1,
   "disabledPlugins": [
     "omarchy.background"
   ],
