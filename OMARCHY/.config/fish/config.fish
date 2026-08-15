@@ -93,6 +93,4 @@ source ~/.config/.env
 
 # Added by Antigravity CLI installer
 set -gx PATH "/home/rylan/.local/bin" $PATH
-# >>> xmake >>>
-test -f "/home/rylan/.xmake/profile" && source "/home/rylan/.xmake/profile"
-# <<< xmake <<<
+atuin init fish --disable-up-arrow | source

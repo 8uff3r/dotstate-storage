@@ -6,7 +6,7 @@
   },
   "bar": {
     "position": "top",
-    "transparent": true,
+    "transparent": false,
     "centerAnchor": "omarchy.clock",
     "layout": {
       "left": [
@@ -15,6 +15,12 @@
         },
         {
           "id": "omarchy.workspaces"
+        },
+        {
+          "id": "vighnesh.omanews"
+        },
+        {
+          "id": "pick.screenshot"
         },
         {
           "id": "robzolkos.github"
@@ -31,7 +37,7 @@
           "showTrackTitle": "On",
           "audioQuality": "320 kbps",
           "searchHistory": "[]",
-          "sessionState": "{\"tab\":\"queue\",\"searchText\":\"\",\"searchType\":\"track\",\"libraryType\":\"tracks\",\"homeType\":\"recent\",\"libraryFilter\":\"\",\"librarySort\":\"default\",\"playlistFilter\":\"\",\"playlistSort\":\"default\",\"detailFilter\":\"\",\"detailSort\":\"default\",\"artistSearchText\":\"\",\"scrollPositions\":{\"home:recent\":0,\"discover\":0,\"detail:spotify:playlist:37i9dQZEVXbgm4sxAdwuhQ\":0,\"playlist:\":0,\"library:tracks\":0},\"detailItem\":null,\"selectedPlaylistId\":\"\",\"lastRadioPlaylist\":null}"
+          "sessionState": "{\"tab\":\"home\",\"searchText\":\"\",\"searchType\":\"track\",\"libraryType\":\"tracks\",\"homeType\":\"tracks\",\"libraryFilter\":\"\",\"librarySort\":\"default\",\"playlistFilter\":\"\",\"playlistSort\":\"default\",\"detailFilter\":\"\",\"detailSort\":\"default\",\"artistSearchText\":\"\",\"scrollPositions\":{\"home:recent\":0,\"discover\":0,\"detail:spotify:playlist:37i9dQZEVXbgm4sxAdwuhQ\":0,\"playlist:\":0,\"library:tracks\":0,\"search:track\":0,\"home:tracks\":0},\"detailItem\":null,\"selectedPlaylistId\":\"\",\"lastRadioPlaylist\":null}"
         },
         {
           "id": "omarchy.clock",
@@ -61,6 +67,9 @@
           "id": "omarchy.tray"
         },
         {
+          "id": "ssupt.bluetooth-audio"
+        },
+        {
           "id": "io.github.elynch303.fan-monitor"
         },
         {
@@ -73,22 +82,16 @@
           "id": "matjam.omawall"
         },
         {
-          "id": "bt.codecs"
-        },
-        {
           "id": "omarchy.agents"
-        },
-        {
-          "id": "omarchy.bluetooth"
         },
         {
           "id": "omarchy.network"
         },
         {
-          "id": "omarchy.audio"
+          "id": "omarchy.power"
         },
         {
-          "id": "omarchy.power"
+          "id": "omarchy.audio"
         },
         {
           "id": "omarchy.monitor"
