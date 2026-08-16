@@ -269,6 +269,11 @@ local binds = {
         "omarchy-capture-screenshot",
     },
     {
+        "SUPER + ALT + S",
+        "Extract text (OCR) from screenshot",
+        "omarchy-capture-text",
+    },
+    {
         "SUPER + CTRL + X",
         "Toggle dictation",
         "voxtype record toggle",
