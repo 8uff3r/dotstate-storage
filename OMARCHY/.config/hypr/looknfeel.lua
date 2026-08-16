@@ -68,4 +68,7 @@ hl.config({
     animations = {
         enabled = true,
     },
+    misc = {
+      enable_anr_dialog = false
+    }
 })
