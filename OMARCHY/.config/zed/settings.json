@@ -178,6 +178,10 @@
       "args": ["acp"],
     },
     "claude-acp": {
+      "default_config_options": {
+        "mode": "acceptEdits",
+        "model": "fable"
+      },
       "type": "registry",
     },
     "pi-acp": {
