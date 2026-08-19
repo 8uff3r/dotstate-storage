@@ -289,6 +289,11 @@ local binds = {
         "voxtype record stop",
         { release = true }
     },
+    {
+        "SUPER + W",
+        "Everything",
+        "omarchy-shell shell toggle b.everything"
+    }
 }
 
 for _, value in ipairs(binds) do
