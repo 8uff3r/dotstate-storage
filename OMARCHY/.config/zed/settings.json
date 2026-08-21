@@ -172,6 +172,9 @@
   "icon_theme": "Catppuccin Mocha",
 
   "agent_servers": {
+    "antigravity-acp": {
+      "type": "registry"
+    },
     "hermes-agent": {
       "type": "custom",
       "command": "hermes",
