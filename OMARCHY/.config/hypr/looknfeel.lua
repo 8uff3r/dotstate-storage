@@ -8,8 +8,6 @@ hl.config({
         border_size = 2,
 
         col = {
-            active_border         = hl.get_config("general.col.active_border"),
-            inactive_border       = hl.get_config("general.col.inactive_border"),
             nogroup_border        = hl.get_config("general.col.inactive_border"),
             nogroup_border_active = hl.get_config("general.col.active_border"),
         },
