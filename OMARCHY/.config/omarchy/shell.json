@@ -17,13 +17,13 @@
           "id": "omarchy.workspaces"
         },
         {
-          "id": "vighnesh.omanews"
+          "id": "b.everything"
+        },
+        {
+          "id": "io.github.monswiklund.workspace-presets"
         },
         {
           "id": "pick.screenshot"
-        },
-        {
-          "id": "robzolkos.github"
         }
       ],
       "center": [
@@ -52,6 +52,12 @@
           "id": "omarchy.weather"
         },
         {
+          "id": "famas.media-plus"
+        },
+        {
+          "id": "stappmus.lyrics"
+        },
+        {
           "id": "esegnorelli.omacapy",
           "panelSide": "center"
         },
@@ -67,10 +73,16 @@
           "id": "omarchy.tray"
         },
         {
+          "id": "perfektnacht.controller-launcher"
+        },
+        {
+          "id": "omaconnect"
+        },
+        {
           "id": "ssupt.bluetooth-audio"
         },
         {
-          "id": "io.github.elynch303.fan-monitor"
+          "id": "dlpwaters.qr-generator"
         },
         {
           "id": "hl.peripheral_battery"
@@ -97,7 +109,8 @@
           "id": "omarchy.monitor"
         }
       ]
-    }
+    },
+    "id": "io.github.guiestrela.glassbar"
   },
   "plugins": [
     {
@@ -108,12 +121,23 @@
     },
     {
       "id": "shell.settings"
+    },
+    {
+      "id": "com.aktivesolutions.bw-vault"
+    },
+    {
+      "id": "io.github.sirjul1337.lock-explorer",
+      "design": "editorial"
     }
   ],
   "disabledPlugins": [
-    "omarchy.background"
+    "omarchy.background",
+    "omarchy.media",
+    "omarchy.lock"
   ],
   "cloneSourceRestores": [
-    "matjam.omawall"
+    "matjam.omawall",
+    "famas.media-plus",
+    "io.github.sirjul1337.lock-explorer"
   ]
 }
