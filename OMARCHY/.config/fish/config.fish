@@ -80,6 +80,10 @@ if status is-interactive # Commands to run in interactive sessions can go here
         rm -f -- "$tmp"
     end
 
+    function d --wraps=setsid
+        setsid $argv &>/dev/null
+    end
+
     function mkcd
         mkdir -p $argv
         cd $argv

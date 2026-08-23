@@ -266,7 +266,7 @@ local binds = {
     {
         "SUPER + CTRL + S",
         "Take a screenshot",
-        "omarchy-shell b.omashot show",
+        "omasnap",
     },
     {
         "SUPER + ALT + S",
