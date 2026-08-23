@@ -173,7 +173,7 @@
 
   "agent_servers": {
     "antigravity-acp": {
-      "type": "registry"
+      "type": "registry",
     },
     "hermes-agent": {
       "type": "custom",
@@ -183,7 +183,7 @@
     "claude-acp": {
       "default_config_options": {
         "mode": "acceptEdits",
-        "model": "fable"
+        "model": "fable",
       },
       "type": "registry",
     },
@@ -274,6 +274,9 @@
     },
   },
   "languages": {
+    "Rust": {
+      "language_servers": ["!rust-analyzer", "rust-glancer"],
+    },
     "CSS": {
       "format_on_save": "on",
       "prettier": {
