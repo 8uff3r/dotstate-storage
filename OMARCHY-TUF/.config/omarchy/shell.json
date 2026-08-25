@@ -1,0 +1,143 @@
+{
+  "version": 1,
+  "idle": {
+    "screensaver": 150,
+    "lock": 300
+  },
+  "bar": {
+    "position": "top",
+    "transparent": false,
+    "centerAnchor": "omarchy.clock",
+    "layout": {
+      "left": [
+        {
+          "id": "omarchy.menu"
+        },
+        {
+          "id": "omarchy.workspaces"
+        },
+        {
+          "id": "b.everything"
+        },
+        {
+          "id": "io.github.monswiklund.workspace-presets"
+        },
+        {
+          "id": "pick.screenshot"
+        }
+      ],
+      "center": [
+        {
+          "id": "omarchy.indicators"
+        },
+        {
+          "id": "quickshell.spotify",
+          "deviceName": "Omarchy Spotify",
+          "idleShutdownMinutes": 15,
+          "showTrackTitle": "On",
+          "audioQuality": "320 kbps",
+          "searchHistory": "[]",
+          "sessionState": "{\"tab\":\"home\",\"searchText\":\"\",\"searchType\":\"track\",\"libraryType\":\"tracks\",\"homeType\":\"tracks\",\"libraryFilter\":\"\",\"librarySort\":\"default\",\"playlistFilter\":\"\",\"playlistSort\":\"default\",\"detailFilter\":\"\",\"detailSort\":\"default\",\"artistSearchText\":\"\",\"scrollPositions\":{\"home:recent\":0,\"discover\":0,\"detail:spotify:playlist:37i9dQZEVXbgm4sxAdwuhQ\":0,\"playlist:\":0,\"library:tracks\":0,\"search:track\":0,\"home:tracks\":0},\"detailItem\":null,\"selectedPlaylistId\":\"\",\"lastRadioPlaylist\":null}"
+        },
+        {
+          "id": "omarchy.clock",
+          "format": "dddd HH:mm",
+          "formatAlt": "d MMMM 'W'ww yyyy",
+          "verticalFormat": "HH\n—\nmm"
+        },
+        {
+          "id": "omarchy.keyboard-layout"
+        },
+        {
+          "id": "omarchy.weather"
+        },
+        {
+          "id": "famas.media-plus"
+        },
+        {
+          "id": "stappmus.lyrics"
+        },
+        {
+          "id": "esegnorelli.omacapy",
+          "panelSide": "center"
+        },
+        {
+          "id": "local.opencode-go"
+        },
+        {
+          "id": "omarchy.system-update"
+        }
+      ],
+      "right": [
+        {
+          "id": "omarchy.tray"
+        },
+        {
+          "id": "perfektnacht.controller-launcher"
+        },
+        {
+          "id": "omaconnect"
+        },
+        {
+          "id": "ssupt.bluetooth-audio"
+        },
+        {
+          "id": "dlpwaters.qr-generator"
+        },
+        {
+          "id": "hl.peripheral_battery"
+        },
+        {
+          "id": "io.github.bmontythe3rd.display-manager"
+        },
+        {
+          "id": "matjam.omawall"
+        },
+        {
+          "id": "omarchy.agents"
+        },
+        {
+          "id": "omarchy.network"
+        },
+        {
+          "id": "omarchy.power"
+        },
+        {
+          "id": "omarchy.audio"
+        },
+        {
+          "id": "omarchy.monitor"
+        }
+      ]
+    },
+    "id": "io.github.guiestrela.glassbar"
+  },
+  "plugins": [
+    {
+      "id": "b.okomart"
+    },
+    {
+      "id": "cliamp"
+    },
+    {
+      "id": "shell.settings"
+    },
+    {
+      "id": "com.aktivesolutions.bw-vault"
+    },
+    {
+      "id": "io.github.sirjul1337.lock-explorer",
+      "design": "editorial"
+    }
+  ],
+  "disabledPlugins": [
+    "omarchy.background",
+    "omarchy.media",
+    "omarchy.lock"
+  ],
+  "cloneSourceRestores": [
+    "matjam.omawall",
+    "famas.media-plus",
+    "io.github.sirjul1337.lock-explorer"
+  ]
+}

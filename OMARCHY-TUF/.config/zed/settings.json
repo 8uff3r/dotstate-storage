@@ -1,0 +1,510 @@
+/// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "cli_default_open_behavior": "new_window",
+  "format_on_save": "on",
+  "disable_ai": false,
+  "semantic_tokens": "combined",
+  "global_lsp_settings": {
+    "semantic_token_rules": [
+      {
+        "token_type": "keyword",
+        "token_modifiers": ["todo"],
+        "foreground_color": "#0fffff",
+        "background_color": "#003333",
+        "font_weight": "bold",
+      },
+      {
+        "token_type": "keyword",
+        "token_modifiers": ["fixme"],
+        "foreground_color": "#FF2D55",
+        "background_color": "#2B0011",
+        "font_weight": "bold",
+      },
+      {
+        "token_type": "keyword",
+        "token_modifiers": ["hack"],
+        "foreground_color": "#FFD60A",
+        "background_color": "#272100",
+        "font_weight": "bold",
+      },
+      {
+        "token_type": "keyword",
+        "token_modifiers": ["note"],
+        "foreground_color": "#0A84FF",
+        "background_color": "#001B2B",
+        "font_weight": "bold",
+      },
+      {
+        "token_type": "keyword",
+        "token_modifiers": ["info"],
+        "foreground_color": "#0A84FF",
+        "background_color": "#001B2B",
+        "font_weight": "bold",
+      },
+      {
+        "token_type": "keyword",
+        "token_modifiers": ["warn"],
+        "foreground_color": "#FF9F0A",
+        "background_color": "#271B00",
+        "font_weight": "bold",
+      },
+      {
+        "token_type": "keyword",
+        "token_modifiers": ["warning"],
+        "foreground_color": "#FF9F0A",
+        "background_color": "#271B00",
+        "font_weight": "bold",
+      },
+      {
+        "token_type": "keyword",
+        "token_modifiers": ["bug"],
+        "foreground_color": "#FF453A",
+        "background_color": "#2B0A00",
+        "font_weight": "bold",
+      },
+      {
+        "token_type": "keyword",
+        "token_modifiers": ["xxx"],
+        "foreground_color": "#BF5AF2",
+        "background_color": "#1B0029",
+        "font_weight": "bold",
+      },
+      {
+        "token_type": "keyword",
+        "token_modifiers": ["deprecated"],
+        "foreground_color": "#98989D",
+        "background_color": "#1A1A1A",
+        "font_weight": "bold",
+      },
+    ],
+  },
+  "outline_panel": {
+    "dock": "left",
+  },
+  "collaboration_panel": {
+    "dock": "left",
+  },
+  "project_panel": {
+    "dock": "left",
+    "hide_gitignore": false,
+    "hide_hidden": false,
+  },
+  "restore_on_startup": "last_workspace",
+  "terminal": {
+    "font_family": "Hack Nerd Font Mono",
+    "font_fallbacks": ["Vazir Code Hack"],
+    "font_features": { "calt": true, "cv01": true },
+    "shell": {
+      "program": "fish",
+    },
+  },
+  "vim_mode": true,
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+  "base_keymap": "VSCode",
+  "ui_font_size": 16,
+  "ui_font_family": "GeistMono Nerd Font",
+  "buffer_font_family": "GeistMono Nerd Font",
+  "buffer_font_size": 16,
+  "theme": {
+    "mode": "system",
+    "light": "Ayu Light",
+    "dark": "Catppuccin Mocha",
+  },
+  "session": {
+    "trust_all_worktrees": true,
+  },
+  "auto_update": false,
+  "git_panel": {
+    "dock": "left",
+    "tree_view": true,
+    "sort_by": "path",
+  },
+  "colorize_brackets": true,
+  "show_edit_predictions": true,
+  "auto_update_extensions": {
+    "go-snippets": false,
+    "vue-snippets": false,
+    "markdown-oxide": false,
+    "mcp-server-markitdown": false,
+    "tailwindcss-language-server": false,
+    "tailwindcss": false,
+    "libsql-context-server": false,
+    "oxc": false,
+    "oxfmt": false,
+    "oxlint": false,
+    "git-firefly": false,
+    "docker-compose": false,
+    "csv": false,
+    "log": false,
+    "lua": false,
+    "make": false,
+    "catppuccin-icons": false,
+    "sql": false,
+    "dockerfile": false,
+    "catppuccin": false,
+    "vue": false,
+    "enabled": false,
+    "vue-language-server": false,
+    "HTML": false,
+  },
+  "soft_wrap": "prefer_line",
+  "preferred_line_length": 110,
+  "diagnostics": {
+    "inline": {
+      "enabled": true,
+      "max_severity": "warning", // same values as the `diagnostics_max_severity` from the editor settings
+    },
+  },
+  "cursor_blink": false,
+  "relative_line_numbers": "enabled",
+  "restore_on_file_reopen": true,
+  "close_on_file_delete": false,
+  "icon_theme": "Catppuccin Mocha",
+
+  "agent_servers": {
+    "antigravity-acp": {
+      "type": "registry",
+    },
+    "hermes-agent": {
+      "type": "custom",
+      "command": "hermes",
+      "args": ["acp"],
+    },
+    "claude-acp": {
+      "default_config_options": {
+        "mode": "acceptEdits",
+        "model": "fable",
+      },
+      "type": "registry",
+    },
+    "pi-acp": {
+      "type": "registry",
+    },
+    "opencode": {
+      "type": "registry",
+    },
+  },
+  "agent": {
+    "default_model": {
+      "effort": "max",
+      "provider": "opencode",
+      "model": "go/deepseek-v4-flash",
+      "enable_thinking": true,
+    },
+    "tool_permissions": {
+      "default": "allow",
+    },
+    "favorite_models": [],
+    "dock": "right",
+    "expand_edit_card": false,
+    "use_modifier_to_send": false,
+    "enable_feedback": true,
+    "default_profile": "write",
+  },
+  "lsp": {
+    "tailwindcss-language-server": {
+      "settings": {
+        "classFunctions": ["clsx", "cn", "defineAppConfig"],
+        "classAttributes": ["class", "ui", "className"],
+      },
+    },
+    "oxlint": {
+      "initialization_options": {
+        "settings": {
+          "configPath": null,
+          "run": "onType",
+          "disableNestedConfig": false,
+          "fixKind": "safe_fix",
+          "typeAware": true,
+          "unusedDisableDirectives": "deny",
+        },
+      },
+    },
+    "oxfmt": {
+      "initialization_options": {
+        "settings": {
+          "configPath": null,
+          "run": "onSave",
+        },
+      },
+    },
+    "vtsls": {
+      "settings": {
+        // For TypeScript:
+        "typescript": {
+          "tsserver": {
+            "maxTsServerMemory": 8192,
+            "experimental": { "enableProjectDiagnostics": false },
+            "disableAutomaticTypeAcquisition": true,
+          },
+        },
+        // For JavaScript:
+        "javascript": {
+          "tsserver": {
+            "maxTsServerMemory": 8192,
+            "experimental": { "enableProjectDiagnostics": false },
+          },
+        },
+      },
+    },
+    "dart": {
+      "binary": {
+        "path": "/home/rylan/.flutter_sdk/bin/dart",
+        "arguments": ["language-server", "--protocol=lsp"],
+      },
+    },
+    "vscode-css-language-server": {
+      "settings": {
+        "css": {
+          "lint": {
+            "unknownAtRules": "ignore",
+          },
+        },
+      },
+    },
+  },
+  "languages": {
+    "Rust": {
+      "language_servers": ["!rust-analyzer", "rust-glancer"],
+    },
+    "CSS": {
+      "format_on_save": "on",
+      "prettier": {
+        "allowed": false,
+      },
+      "formatter": [
+        {
+          "language_server": {
+            "name": "oxfmt",
+          },
+        },
+      ],
+    },
+    "YAML": {
+      "format_on_save": "on",
+      "prettier": {
+        "allowed": false,
+      },
+      "formatter": [
+        {
+          "language_server": {
+            "name": "oxfmt",
+          },
+        },
+      ],
+    },
+    "Markdown": {
+      "format_on_save": "on",
+      "prettier": {
+        "allowed": false,
+      },
+      "formatter": [
+        {
+          "language_server": {
+            "name": "oxfmt",
+          },
+        },
+      ],
+    },
+    "HTML": {
+      "format_on_save": "on",
+      "prettier": {
+        "allowed": false,
+      },
+      "formatter": [
+        {
+          "language_server": {
+            "name": "oxfmt",
+          },
+        },
+      ],
+    },
+    "JavaScript": {
+      "format_on_save": "on",
+      "prettier": {
+        "allowed": false,
+      },
+      "formatter": [
+        {
+          "language_server": {
+            "name": "oxfmt",
+          },
+        },
+        {
+          "code_action": "source.fixAll.oxc",
+        },
+      ],
+    },
+    "JSON": {
+      "format_on_save": "on",
+      "prettier": {
+        "allowed": false,
+      },
+      "formatter": [
+        {
+          "language_server": {
+            "name": "oxfmt",
+          },
+        },
+      ],
+    },
+    "TSX": {
+      "format_on_save": "on",
+      "prettier": {
+        "allowed": false,
+      },
+      "formatter": [
+        {
+          "language_server": {
+            "name": "oxfmt",
+          },
+        },
+      ],
+    },
+    "TypeScript": {
+      "format_on_save": "on",
+      "prettier": {
+        "allowed": false,
+      },
+      "formatter": [
+        {
+          "language_server": {
+            "name": "oxfmt",
+          },
+        },
+      ],
+    },
+    "Vue.js": {
+      "format_on_save": "on",
+      "prettier": {
+        "allowed": false,
+      },
+      "formatter": [
+        {
+          "language_server": {
+            "name": "oxfmt",
+          },
+        },
+      ],
+    },
+  },
+  "context_servers": {
+    "nuxt-hub": {
+      "enabled": true,
+      "url": "https://hub.nuxt.com/mcp",
+      "settings": {},
+    },
+    "shadcn-vue": {
+      "enabled": false,
+      "command": "bunx",
+      "args": ["--bun", "shadcn-vue@latest", "mcp"],
+    },
+    "nuxt-ui": {
+      "enabled": true,
+      "url": "https://ui.nuxt.com/mcp",
+      "settings": {},
+    },
+    "nuxt": {
+      "enabled": true,
+      "url": "https://nuxt.com/mcp",
+      "settings": {},
+    },
+  },
+  "language_models": {
+    "opencode": {
+      "show_zen_models": false,
+    },
+    "openai_compatible": {
+      "llama.cpp": {
+        "api_url": "http://127.0.0.1:8070",
+        "available_models": [
+          {
+            "name": "qwen3",
+            "display_name": "Qwen3 14B",
+            "max_tokens": 1000000,
+          },
+        ],
+      },
+
+      "gap": {
+        "api_url": "https://api.gapgpt.app/v1",
+        "available_models": [
+          {
+            "name": "gpt-4o-mini",
+            "display_name": "GPT 4o-mini",
+            "max_tokens": 1048576,
+          },
+        ],
+      },
+      "nano": {
+        "api_url": "https://nano-gpt.com/api/v1",
+        "available_models": [
+          {
+            "name": "deepseek/deepseek-v4",
+            "display_name": "DeepSeek V4",
+            "max_tokens": 1000000,
+            "max_output_tokens": 1000000,
+          },
+          {
+            "name": "zai-org/glm-4.7",
+            "display_name": "GLM 4.7",
+            "max_tokens": 1000000,
+            "max_output_tokens": 1000000,
+          },
+          {
+            "name": "zai-org/glm-5.2",
+            "display_name": "GLM 5.2",
+            "max_tokens": 1000000,
+            "max_output_tokens": 1000000,
+          },
+          {
+            "name": "minimax/minimax-m3",
+            "display_name": "MiniMax M3",
+            "max_tokens": 1000000,
+            "max_output_tokens": 1000000,
+          },
+          {
+            "name": "moonshotai/kimi-k2.7",
+            "display_name": "Kimi K2.5",
+            "max_tokens": 1000000,
+            "max_output_tokens": 1000000,
+          },
+          {
+            "name": "moonshotai/kimi-k2.7:thinking",
+            "display_name": "Kimi K2.7 Thinking",
+            "max_tokens": 1000000,
+            "max_output_tokens": 1000000,
+          },
+        ],
+      },
+    },
+  },
+  "ssh_connections": [
+    {
+      "host": "87.236.211.121",
+      "username": "khashaki",
+      "args": [],
+      "projects": [
+        {
+          "paths": ["/home/khashaki/ehealtht"],
+        },
+      ],
+    },
+  ],
+  "theme_overrides": {
+    "Catppuccin Mocha (Blur) [Light]": {
+      "error.background": "#48161BFF",
+      "tab.active_background": "#ACCCD830",
+    },
+  },
+}
