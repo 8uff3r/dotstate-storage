@@ -14,13 +14,157 @@
           "id": "omarchy.keyboard-layout"
         },
         {
+          "id": "leyanora.plugincontainers",
+          "containers": [
+            {
+              "id": "c1",
+              "name": "system",
+              "icon": "󱁤",
+              "members": [
+                "ssupt.bluetooth-audio",
+                "io.github.bmontythe3rd.display-manager",
+                "stappmus.activity-monitor",
+                "pick.screenshot",
+                "skvggor.omavault"
+              ],
+              "settings": {}
+            },
+            {
+              "id": "c2",
+              "name": "share",
+              "icon": "󰌗",
+              "members": [
+                "omaconnect",
+                "dlpwaters.qr-generator"
+              ],
+              "settings": {}
+            },
+            {
+              "id": "c3",
+              "name": "gaming",
+              "icon": "󰊴",
+              "members": [
+                "silvaio.gamemode",
+                "perfektnacht.controller-launcher"
+              ],
+              "settings": {}
+            },
+            {
+              "id": "c4",
+              "name": "dev",
+              "icon": "󰅴",
+              "members": [
+                "omarchy.agents",
+                "local.opencode-go"
+              ],
+              "settings": {}
+            }
+          ],
+          "stashed": {
+            "ssupt.bluetooth-audio": {
+              "inBar": true,
+              "section": "right",
+              "index": 9,
+              "entry": {
+                "id": "ssupt.bluetooth-audio"
+              }
+            },
+            "io.github.bmontythe3rd.display-manager": {
+              "inBar": true,
+              "section": "right",
+              "index": 12,
+              "entry": {
+                "id": "io.github.bmontythe3rd.display-manager"
+              }
+            },
+            "stappmus.activity-monitor": {
+              "inBar": true,
+              "section": "right",
+              "index": 6,
+              "entry": {
+                "id": "stappmus.activity-monitor"
+              }
+            },
+            "omaconnect": {
+              "inBar": true,
+              "section": "right",
+              "index": 7,
+              "entry": {
+                "id": "omaconnect"
+              }
+            },
+            "dlpwaters.qr-generator": {
+              "inBar": true,
+              "section": "right",
+              "index": 8,
+              "entry": {
+                "id": "dlpwaters.qr-generator"
+              }
+            },
+            "silvaio.gamemode": {
+              "inBar": true,
+              "section": "right",
+              "index": 4,
+              "entry": {
+                "id": "silvaio.gamemode",
+                "steamGamescope": false
+              }
+            },
+            "perfektnacht.controller-launcher": {
+              "inBar": true,
+              "section": "right",
+              "index": 6,
+              "entry": {
+                "id": "perfektnacht.controller-launcher"
+              }
+            },
+            "pick.screenshot": {
+              "inBar": true,
+              "section": "left",
+              "index": 7,
+              "entry": {
+                "id": "pick.screenshot"
+              }
+            },
+            "omarchy.agents": {
+              "inBar": true,
+              "section": "right",
+              "index": 7,
+              "entry": {
+                "id": "omarchy.agents"
+              }
+            },
+            "local.opencode-go": {
+              "inBar": true,
+              "section": "center",
+              "index": 7,
+              "entry": {
+                "id": "local.opencode-go"
+              }
+            },
+            "skvggor.omavault": {
+              "inBar": true,
+              "section": "right",
+              "index": 5,
+              "entry": {
+                "id": "skvggor.omavault"
+              }
+            }
+          },
+          "settings": {
+            "iconsPerRow": 10,
+            "hideTitle": false,
+            "hideBarIcon": false,
+            "openOnHover": false,
+            "hideEmpty": false,
+            "defaultMode": "strip"
+          }
+        },
+        {
           "id": "omarchy.menu"
         },
         {
           "id": "omarchy.workspaces"
-        },
-        {
-          "id": "io.github.chinofmaya.spaces"
         },
         {
           "id": "b.everything"
@@ -29,7 +173,7 @@
           "id": "io.github.monswiklund.workspace-presets"
         },
         {
-          "id": "pick.screenshot"
+          "id": "io.github.silouanwright.look-elsewhere"
         }
       ],
       "center": [
@@ -67,9 +211,6 @@
           "panelSide": "center"
         },
         {
-          "id": "local.opencode-go"
-        },
-        {
           "id": "omarchy.system-update"
         }
       ],
@@ -81,44 +222,35 @@
           "id": "gotar.omarchy-themes"
         },
         {
-          "id": "silvaio.gamemode",
-          "steamGamescope": false
+          "id": "leyanora.plugincontainers.c1",
+          "source": "/home/rylan/.config/omarchy/plugins/leyanora.plugincontainers/ContainerButton.qml"
+        },
+        {
+          "id": "leyanora.plugincontainers.c2",
+          "source": "/home/rylan/.config/omarchy/plugins/leyanora.plugincontainers/ContainerButton.qml"
+        },
+        {
+          "id": "leyanora.plugincontainers.c3",
+          "source": "/home/rylan/.config/omarchy/plugins/leyanora.plugincontainers/ContainerButton.qml"
+        },
+        {
+          "id": "leyanora.plugincontainers.c4",
+          "source": "/home/rylan/.config/omarchy/plugins/leyanora.plugincontainers/ContainerButton.qml"
         },
         {
           "id": "wian47.removable-drives"
         },
         {
-          "id": "stappmus.activity-monitor"
-        },
-        {
-          "id": "perfektnacht.controller-launcher"
-        },
-        {
-          "id": "omaconnect"
-        },
-        {
-          "id": "ssupt.bluetooth-audio"
-        },
-        {
-          "id": "dlpwaters.qr-generator"
-        },
-        {
           "id": "hl.peripheral_battery"
-        },
-        {
-          "id": "io.github.bmontythe3rd.display-manager"
-        },
-        {
-          "id": "matjam.omawall"
-        },
-        {
-          "id": "omarchy.agents"
         },
         {
           "id": "omarchy.network"
         },
         {
           "id": "omarchy.power"
+        },
+        {
+          "id": "matjam.omawall"
         },
         {
           "id": "omarchy.audio"
@@ -149,7 +281,6 @@
     }
   ],
   "disabledPlugins": [
-    "omarchy.background",
     "omarchy.media",
     "omarchy.lock"
   ],
