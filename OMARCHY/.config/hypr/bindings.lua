@@ -259,6 +259,11 @@ local binds = {
         { locked = true },
     },
     {
+        "SUPER + TAB",
+        "󰽙 Spaces",
+        "omarchy-shell shell toggle io.github.chinofmaya.spaces '{}'",
+    },
+    {
         "ALT + 4",
         "Lock system",
         "omarchy-system-lock",

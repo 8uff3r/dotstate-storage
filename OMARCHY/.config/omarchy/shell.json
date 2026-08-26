@@ -11,10 +11,16 @@
     "layout": {
       "left": [
         {
+          "id": "omarchy.keyboard-layout"
+        },
+        {
           "id": "omarchy.menu"
         },
         {
           "id": "omarchy.workspaces"
+        },
+        {
+          "id": "io.github.chinofmaya.spaces"
         },
         {
           "id": "b.everything"
@@ -31,6 +37,9 @@
           "id": "omarchy.indicators"
         },
         {
+          "id": "omarchy.weather"
+        },
+        {
           "id": "quickshell.spotify",
           "deviceName": "Omarchy Spotify",
           "idleShutdownMinutes": 15,
@@ -38,6 +47,9 @@
           "audioQuality": "320 kbps",
           "searchHistory": "[]",
           "sessionState": "{\"tab\":\"home\",\"searchText\":\"\",\"searchType\":\"track\",\"libraryType\":\"tracks\",\"homeType\":\"tracks\",\"libraryFilter\":\"\",\"librarySort\":\"default\",\"playlistFilter\":\"\",\"playlistSort\":\"default\",\"detailFilter\":\"\",\"detailSort\":\"default\",\"artistSearchText\":\"\",\"scrollPositions\":{\"home:recent\":0,\"discover\":0,\"detail:spotify:playlist:37i9dQZEVXbgm4sxAdwuhQ\":0,\"playlist:\":0,\"library:tracks\":0,\"search:track\":0,\"home:tracks\":0},\"detailItem\":null,\"selectedPlaylistId\":\"\",\"lastRadioPlaylist\":null}"
+        },
+        {
+          "id": "leomoon-studios.omarchy-persian-calendar"
         },
         {
           "id": "omarchy.clock",
@@ -48,16 +60,7 @@
           "lifeExpectancy": 60
         },
         {
-          "id": "omarchy.keyboard-layout"
-        },
-        {
-          "id": "omarchy.weather"
-        },
-        {
           "id": "famas.media-plus"
-        },
-        {
-          "id": "stappmus.lyrics"
         },
         {
           "id": "esegnorelli.omacapy",
@@ -73,6 +76,19 @@
       "right": [
         {
           "id": "omarchy.tray"
+        },
+        {
+          "id": "gotar.omarchy-themes"
+        },
+        {
+          "id": "silvaio.gamemode",
+          "steamGamescope": false
+        },
+        {
+          "id": "wian47.removable-drives"
+        },
+        {
+          "id": "stappmus.activity-monitor"
         },
         {
           "id": "perfektnacht.controller-launcher"
