@@ -67,6 +67,7 @@ hl.config({
         enabled = true,
     },
     misc = {
+        focus_on_activate = false,
         enable_anr_dialog = false
     }
 })

@@ -315,3 +315,10 @@ for i = 1, 10 do
     o.bind("SUPER + CTRL + " .. key, "Move window silently to workspace " .. i,
         hl.dsp.window.move({ workspace = tostring(i), follow = false }))
 end
+
+-- flea --default: begin. Written by `flea --default`; `flea --default off` removes the block whole.
+hl.unbind("SUPER + SHIFT + F")
+o.bind("SUPER + SHIFT + F", "File manager", { launch = 'flea --gui' })
+hl.unbind("SUPER + ALT + SHIFT + F")
+o.bind("SUPER + ALT + SHIFT + F", "File manager (cwd)", { launch = 'flea --gui "$(omarchy-cmd-terminal-cwd)"' })
+-- flea --default: end.

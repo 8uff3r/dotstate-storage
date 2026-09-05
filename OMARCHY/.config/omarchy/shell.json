@@ -5,13 +5,16 @@
     "lock": 300
   },
   "bar": {
-    "position": "top",
-    "transparent": true,
+    "position": "left",
+    "transparent": false,
     "centerAnchor": "omarchy.clock",
     "layout": {
       "left": [
         {
           "id": "omarchy.keyboard-layout"
+        },
+        {
+          "id": "omarchy.menu"
         },
         {
           "id": "leyanora.plugincontainers",
@@ -25,7 +28,8 @@
                 "io.github.bmontythe3rd.display-manager",
                 "stappmus.activity-monitor",
                 "pick.screenshot",
-                "skvggor.omavault"
+                "skvggor.omavault",
+                "gotar.omarchy-themes"
               ],
               "settings": {}
             },
@@ -149,6 +153,14 @@
               "entry": {
                 "id": "skvggor.omavault"
               }
+            },
+            "gotar.omarchy-themes": {
+              "inBar": true,
+              "section": "right",
+              "index": 1,
+              "entry": {
+                "id": "gotar.omarchy-themes"
+              }
             }
           },
           "settings": {
@@ -161,9 +173,6 @@
           }
         },
         {
-          "id": "omarchy.menu"
-        },
-        {
           "id": "omarchy.workspaces"
         },
         {
@@ -173,13 +182,14 @@
           "id": "io.github.monswiklund.workspace-presets"
         },
         {
-          "id": "io.github.silouanwright.look-elsewhere"
+          "id": "io.github.silouanwright.look-elsewhere",
+          "showKeyboardHints": false
+        },
+        {
+          "id": "omarchy.indicators"
         }
       ],
       "center": [
-        {
-          "id": "omarchy.indicators"
-        },
         {
           "id": "omarchy.weather"
         },
@@ -187,10 +197,15 @@
           "id": "quickshell.spotify",
           "deviceName": "Omarchy Spotify",
           "idleShutdownMinutes": 15,
+          "showMiniPlayer": "On",
+          "shortcutPlayer": "Omarchy Music app",
           "showTrackTitle": "On",
+          "showArtistName": "Off",
+          "scrollBarText": "Off",
+          "scrollSpeed": "1",
           "audioQuality": "320 kbps",
           "searchHistory": "[]",
-          "sessionState": "{\"tab\":\"home\",\"searchText\":\"\",\"searchType\":\"track\",\"libraryType\":\"tracks\",\"homeType\":\"tracks\",\"libraryFilter\":\"\",\"librarySort\":\"default\",\"playlistFilter\":\"\",\"playlistSort\":\"default\",\"detailFilter\":\"\",\"detailSort\":\"default\",\"artistSearchText\":\"\",\"scrollPositions\":{\"home:recent\":0,\"discover\":0,\"detail:spotify:playlist:37i9dQZEVXbgm4sxAdwuhQ\":0,\"playlist:\":0,\"library:tracks\":0,\"search:track\":0,\"home:tracks\":0},\"detailItem\":null,\"selectedPlaylistId\":\"\",\"lastRadioPlaylist\":null}"
+          "sessionState": "{\"tab\":\"playlists\",\"searchText\":\"\",\"searchType\":\"track\",\"libraryType\":\"tracks\",\"homeType\":\"tracks\",\"libraryFilter\":\"\",\"librarySort\":\"default\",\"playlistFilter\":\"\",\"playlistSort\":\"default\",\"detailFilter\":\"\",\"detailSort\":\"default\",\"homeFilter\":\"\",\"discoverFilter\":\"\",\"queueFilter\":\"\",\"artistSearchText\":\"\",\"scrollPositions\":{\"home:recent\":0,\"discover\":0,\"detail:spotify:playlist:37i9dQZEVXbgm4sxAdwuhQ\":0,\"playlist:\":0,\"library:tracks\":0,\"search:track\":0,\"home:tracks\":0,\"playlist:37i9dQZF1CKMFBxUbxRIAg\":3153},\"detailItem\":null,\"selectedPlaylistId\":\"37i9dQZF1CKMFBxUbxRIAg\",\"lastRadioPlaylist\":null}"
         },
         {
           "id": "leomoon-studios.omarchy-persian-calendar"
@@ -212,15 +227,12 @@
         },
         {
           "id": "omarchy.system-update"
+        },
+        {
+          "id": "omarchy.tray"
         }
       ],
       "right": [
-        {
-          "id": "omarchy.tray"
-        },
-        {
-          "id": "gotar.omarchy-themes"
-        },
         {
           "id": "leyanora.plugincontainers.c1",
           "source": "/home/rylan/.config/omarchy/plugins/leyanora.plugincontainers/ContainerButton.qml"
@@ -234,11 +246,11 @@
           "source": "/home/rylan/.config/omarchy/plugins/leyanora.plugincontainers/ContainerButton.qml"
         },
         {
-          "id": "leyanora.plugincontainers.c4",
-          "source": "/home/rylan/.config/omarchy/plugins/leyanora.plugincontainers/ContainerButton.qml"
+          "id": "wian47.removable-drives"
         },
         {
-          "id": "wian47.removable-drives"
+          "id": "leyanora.plugincontainers.c4",
+          "source": "/home/rylan/.config/omarchy/plugins/leyanora.plugincontainers/ContainerButton.qml"
         },
         {
           "id": "hl.peripheral_battery"

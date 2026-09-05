@@ -116,9 +116,9 @@
   "buffer_font_family": "GeistMono Nerd Font",
   "buffer_font_size": 16,
   "theme": {
-    "mode": "system",
+    "mode": "dark",
     "light": "Ayu Light",
-    "dark": "Omazed",
+    "dark": "Catppuccin Mocha",
   },
   "session": {
     "trust_all_worktrees": true,
@@ -169,7 +169,11 @@
   "relative_line_numbers": "enabled",
   "restore_on_file_reopen": true,
   "close_on_file_delete": false,
-  "icon_theme": "Catppuccin Mocha",
+  "icon_theme": {
+    "mode": "dark",
+    "light": "Catppuccin Mocha",
+    "dark": "Catppuccin Mocha",
+  },
 
   "agent_servers": {
     "antigravity-acp": {
@@ -195,10 +199,31 @@
     },
   },
   "agent": {
+    "play_sound_when_agent_done": "when_hidden",
+    "notify_when_agent_waiting": "all_screens",
+    "sandbox_permissions": {
+      "allow_unsandboxed": true,
+      "write_paths": [
+        {
+          "requested": "/home/rylan/.cache/mbx",
+          "resolved": "/home/rylan/.cache/mbx"
+        }
+      ],
+      "network_hosts": [
+        "docs.rs",
+        "github.com",
+        "raw.githubusercontent.com",
+        "objects.githubusercontent.com",
+        "release-assets.githubusercontent.com",
+        "index.crates.io",
+        "static.crates.io",
+        "crates.io"
+      ]
+    },
     "default_model": {
       "effort": "max",
       "provider": "opencode",
-      "model": "go/deepseek-v4-flash",
+      "model": "go/glm-5.3-flash",
       "enable_thinking": true,
     },
     "tool_permissions": {
@@ -274,9 +299,9 @@
     },
   },
   "languages": {
-    "Rust": {
-      "language_servers": ["!rust-analyzer", "rust-glancer"],
-    },
+    // "Rust": {
+    //   "language_servers": ["!rust-analyzer", "rust-glancer"],
+    // },
     "CSS": {
       "format_on_save": "on",
       "prettier": {
@@ -422,7 +447,18 @@
   },
   "language_models": {
     "opencode": {
-      "show_zen_models": false,
+      "show_go_models": true,
+      "show_zen_models": true,
+      "available_models": [
+        {
+          "name": "glm-5.3-flash",
+          "display_name": "GLM-5.3-Flash",
+          "max_tokens": 1000000,
+          "protocol": "openai_chat",
+          "reasoning_effort_levels": ["low", "medium", "high", "max"],
+          "subscription": "go",
+        },
+      ],
     },
     "openai_compatible": {
       "llama.cpp": {
