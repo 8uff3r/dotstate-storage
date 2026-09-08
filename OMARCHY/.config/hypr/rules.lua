@@ -62,23 +62,23 @@ local rules = {
     -- Special workspaces
     {
         match = { class = "btop" },
-        workspace = "special:sysmon",
+        workspace = "special:special",
     },
     {
         match = { class = "feishin|Spotify|Supersonic|Cider|com\\.github\\.th_ch\\.youtube_music|Plexamp" },
-        workspace = "special:music",
+        workspace = "special:special",
     },
     {
         match = { initial_title = "Spotify( Free)?" },
-        workspace = "special:music",
+        workspace = "special:special",
     },
     {
         match = { class = "discord|equibop|vesktop|whatsapp" },
-        workspace = "special:communication",
+        workspace = "special:special",
     },
     {
         match = { class = "Todoist" },
-        workspace = "special:todo",
+        workspace = "special:special",
     },
 
     -- Dialogs
@@ -175,7 +175,7 @@ local rules = {
     { match = { class = "gephgui-wry" },                                              float = true },
     { match = { class = "^(nvim)$" },                                                 workspace = "1" },
     { match = { class = "^(dev.zed.Zed)$" },                                          workspace = "1" },
-    { match = { class = "^(brave-browser)$" },                                        workspace = "2" },
+    { match = { class = "^(brave-browser|brave-origin)$" },                           workspace = "2" },
     { match = { class = "^(zen)$" },                                                  workspace = "2" },
     { match = { class = "^(blueman-manager)$" },                                      float = true },
     { match = { class = "^(org.kde.polkit-kde-authentication-agent-1)$" },            float = true },
@@ -318,6 +318,9 @@ local rules = {
     -- Dolphin
     { match = { class = "^(org.kde.dolphin)$", title = "^(Copying — Dolphin)$" }, no_initial_focus = true },
     { match = { class = "^(org.kde.dolphin)$", title = "^(.* — Dolphin)$" }, group = "deny" },
+
+    -- Flea
+    { match = { class = "^(com.thisisgm.flea)$" }, group = "deny" },
 
     -- Tiling
     { match = { class = "^dev\\.warp\\.Warp$" }, tile = true },

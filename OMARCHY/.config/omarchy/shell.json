@@ -1,195 +1,11 @@
 {
-  "version": 1,
-  "idle": {
-    "screensaver": 150,
-    "lock": 300
-  },
   "bar": {
-    "position": "left",
-    "transparent": false,
     "centerAnchor": "omarchy.clock",
     "layout": {
-      "left": [
-        {
-          "id": "omarchy.keyboard-layout"
-        },
-        {
-          "id": "omarchy.menu"
-        },
-        {
-          "id": "leyanora.plugincontainers",
-          "containers": [
-            {
-              "id": "c1",
-              "name": "system",
-              "icon": "󱁤",
-              "members": [
-                "ssupt.bluetooth-audio",
-                "io.github.bmontythe3rd.display-manager",
-                "stappmus.activity-monitor",
-                "pick.screenshot",
-                "skvggor.omavault",
-                "gotar.omarchy-themes"
-              ],
-              "settings": {}
-            },
-            {
-              "id": "c2",
-              "name": "share",
-              "icon": "󰌗",
-              "members": [
-                "omaconnect",
-                "dlpwaters.qr-generator"
-              ],
-              "settings": {}
-            },
-            {
-              "id": "c3",
-              "name": "gaming",
-              "icon": "󰊴",
-              "members": [
-                "silvaio.gamemode",
-                "perfektnacht.controller-launcher"
-              ],
-              "settings": {}
-            },
-            {
-              "id": "c4",
-              "name": "dev",
-              "icon": "󰅴",
-              "members": [
-                "omarchy.agents",
-                "local.opencode-go"
-              ],
-              "settings": {}
-            }
-          ],
-          "stashed": {
-            "ssupt.bluetooth-audio": {
-              "inBar": true,
-              "section": "right",
-              "index": 9,
-              "entry": {
-                "id": "ssupt.bluetooth-audio"
-              }
-            },
-            "io.github.bmontythe3rd.display-manager": {
-              "inBar": true,
-              "section": "right",
-              "index": 12,
-              "entry": {
-                "id": "io.github.bmontythe3rd.display-manager"
-              }
-            },
-            "stappmus.activity-monitor": {
-              "inBar": true,
-              "section": "right",
-              "index": 6,
-              "entry": {
-                "id": "stappmus.activity-monitor"
-              }
-            },
-            "omaconnect": {
-              "inBar": true,
-              "section": "right",
-              "index": 7,
-              "entry": {
-                "id": "omaconnect"
-              }
-            },
-            "dlpwaters.qr-generator": {
-              "inBar": true,
-              "section": "right",
-              "index": 8,
-              "entry": {
-                "id": "dlpwaters.qr-generator"
-              }
-            },
-            "silvaio.gamemode": {
-              "inBar": true,
-              "section": "right",
-              "index": 4,
-              "entry": {
-                "id": "silvaio.gamemode",
-                "steamGamescope": false
-              }
-            },
-            "perfektnacht.controller-launcher": {
-              "inBar": true,
-              "section": "right",
-              "index": 6,
-              "entry": {
-                "id": "perfektnacht.controller-launcher"
-              }
-            },
-            "pick.screenshot": {
-              "inBar": true,
-              "section": "left",
-              "index": 7,
-              "entry": {
-                "id": "pick.screenshot"
-              }
-            },
-            "omarchy.agents": {
-              "inBar": true,
-              "section": "right",
-              "index": 7,
-              "entry": {
-                "id": "omarchy.agents"
-              }
-            },
-            "local.opencode-go": {
-              "inBar": true,
-              "section": "center",
-              "index": 7,
-              "entry": {
-                "id": "local.opencode-go"
-              }
-            },
-            "skvggor.omavault": {
-              "inBar": true,
-              "section": "right",
-              "index": 5,
-              "entry": {
-                "id": "skvggor.omavault"
-              }
-            },
-            "gotar.omarchy-themes": {
-              "inBar": true,
-              "section": "right",
-              "index": 1,
-              "entry": {
-                "id": "gotar.omarchy-themes"
-              }
-            }
-          },
-          "settings": {
-            "iconsPerRow": 10,
-            "hideTitle": false,
-            "hideBarIcon": false,
-            "openOnHover": false,
-            "hideEmpty": false,
-            "defaultMode": "strip"
-          }
-        },
-        {
-          "id": "omarchy.workspaces"
-        },
-        {
-          "id": "b.everything"
-        },
-        {
-          "id": "io.github.monswiklund.workspace-presets"
-        },
-        {
-          "id": "io.github.silouanwright.look-elsewhere",
-          "showKeyboardHints": false
-        },
+      "center": [
         {
           "id": "omarchy.indicators"
-        }
-      ],
-      "center": [
+        },
         {
           "id": "omarchy.weather"
         },
@@ -199,24 +15,25 @@
           "idleShutdownMinutes": 15,
           "showMiniPlayer": "On",
           "shortcutPlayer": "Omarchy Music app",
+          "shortcutHints": "On",
           "showTrackTitle": "On",
           "showArtistName": "Off",
+          "showPausedTrack": "On",
           "scrollBarText": "Off",
           "scrollSpeed": "1",
-          "audioQuality": "320 kbps",
-          "searchHistory": "[]",
-          "sessionState": "{\"tab\":\"playlists\",\"searchText\":\"\",\"searchType\":\"track\",\"libraryType\":\"tracks\",\"homeType\":\"tracks\",\"libraryFilter\":\"\",\"librarySort\":\"default\",\"playlistFilter\":\"\",\"playlistSort\":\"default\",\"detailFilter\":\"\",\"detailSort\":\"default\",\"homeFilter\":\"\",\"discoverFilter\":\"\",\"queueFilter\":\"\",\"artistSearchText\":\"\",\"scrollPositions\":{\"home:recent\":0,\"discover\":0,\"detail:spotify:playlist:37i9dQZEVXbgm4sxAdwuhQ\":0,\"playlist:\":0,\"library:tracks\":0,\"search:track\":0,\"home:tracks\":0,\"playlist:37i9dQZF1CKMFBxUbxRIAg\":3153},\"detailItem\":null,\"selectedPlaylistId\":\"37i9dQZF1CKMFBxUbxRIAg\",\"lastRadioPlaylist\":null}"
+          "maxBarTextWidth": "240",
+          "audioQuality": "320 kbps"
         },
         {
           "id": "leomoon-studios.omarchy-persian-calendar"
         },
         {
           "id": "omarchy.clock",
-          "format": "dddd HH:mm",
-          "formatAlt": "d MMMM 'W'ww yyyy",
-          "verticalFormat": "HH\n—\nmm",
           "birthYear": 2000,
-          "lifeExpectancy": 60
+          "format": "ddd d MMM HH:mm",
+          "formatAlt": "d MMMM 'W'ww yyyy",
+          "lifeExpectancy": 60,
+          "verticalFormat": "HH\n—\nmm"
         },
         {
           "id": "famas.media-plus"
@@ -227,39 +44,75 @@
         },
         {
           "id": "omarchy.system-update"
+        }
+      ],
+      "left": [
+        {
+          "id": "omarchy.keyboard-layout"
         },
         {
-          "id": "omarchy.tray"
+          "id": "omarchy.menu"
+        },
+        {
+          "id": "omarchy.workspaces"
+        },
+        {
+          "id": "b.everything"
+        },
+        {
+          "id": "pick.screenshot"
+        },
+        {
+          "id": "agx.screen-time"
+        },
+        {
+          "id": "io.github.silouanwright.look-elsewhere"
         }
       ],
       "right": [
         {
-          "id": "leyanora.plugincontainers.c1",
-          "source": "/home/rylan/.config/omarchy/plugins/leyanora.plugincontainers/ContainerButton.qml"
+          "id": "omarchy.tray"
         },
         {
-          "id": "leyanora.plugincontainers.c2",
-          "source": "/home/rylan/.config/omarchy/plugins/leyanora.plugincontainers/ContainerButton.qml"
+          "id": "3lymn.plugin-drawer",
+          "widgets": [
+            "local.opencode-go",
+            "io.github.bmontythe3rd.display-manager",
+            "gotar.omarchy-themes",
+            "silvaio.gamemode",
+            "perfektnacht.controller-launcher",
+            "omakdeconnect",
+            "dlpwaters.qr-generator",
+            "omamail",
+            "io.github.jondkinney.omapop",
+            "skvggor.omavault",
+            "omarchy.agents",
+            "omaplug"
+          ],
+          "gridColumns": 4,
+          "scale": 0.3
         },
         {
-          "id": "leyanora.plugincontainers.c3",
-          "source": "/home/rylan/.config/omarchy/plugins/leyanora.plugincontainers/ContainerButton.qml"
+          "id": "stappmus.activity-monitor"
         },
         {
           "id": "wian47.removable-drives"
         },
         {
-          "id": "leyanora.plugincontainers.c4",
-          "source": "/home/rylan/.config/omarchy/plugins/leyanora.plugincontainers/ContainerButton.qml"
+          "id": "omaconnect"
         },
         {
-          "id": "hl.peripheral_battery"
+          "id": "hl.peripheral_battery",
+          "displayStyle": "List"
         },
         {
           "id": "omarchy.network"
         },
         {
           "id": "omarchy.power"
+        },
+        {
+          "id": "ssupt.bluetooth-audio"
         },
         {
           "id": "matjam.omawall"
@@ -272,7 +125,21 @@
         }
       ]
     },
-    "id": "io.github.guiestrela.glassbar"
+    "position": "top",
+    "transparent": false
+  },
+  "cloneSourceRestores": [
+    "matjam.omawall",
+    "famas.media-plus",
+    "io.github.sirjul1337.lock-explorer"
+  ],
+  "disabledPlugins": [
+    "omarchy.media",
+    "omarchy.lock"
+  ],
+  "idle": {
+    "lock": 300,
+    "screensaver": 150
   },
   "plugins": [
     {
@@ -289,16 +156,58 @@
     },
     {
       "id": "io.github.sirjul1337.lock-explorer",
-      "design": "editorial"
+      "design": "poster"
+    },
+    {
+      "id": "io.github.bmontythe3rd.display-manager"
+    },
+    {
+      "id": "silvaio.gamemode"
+    },
+    {
+      "id": "perfektnacht.controller-launcher"
+    },
+    {
+      "id": "omakdeconnect"
+    },
+    {
+      "id": "omamail"
+    },
+    {
+      "id": "io.github.jondkinney.omapop"
+    },
+    {
+      "id": "skvggor.omavault"
+    },
+    {
+      "id": "local.opencode-go"
+    },
+    {
+      "id": "dlpwaters.qr-generator"
+    },
+    {
+      "id": "gotar.omarchy-themes"
+    },
+    {
+      "id": "omarchy.agents"
+    },
+    {
+      "id": "omaplug"
+    },
+    {
+      "id": "rdf.dock",
+      "items": [
+        {
+          "desktop": "brave-origin"
+        },
+        {
+          "desktop": "dev.zed.Zed"
+        },
+        {
+          "desktop": "org.telegram.desktop"
+        }
+      ]
     }
   ],
-  "disabledPlugins": [
-    "omarchy.media",
-    "omarchy.lock"
-  ],
-  "cloneSourceRestores": [
-    "matjam.omawall",
-    "famas.media-plus",
-    "io.github.sirjul1337.lock-explorer"
-  ]
+  "version": 1
 }

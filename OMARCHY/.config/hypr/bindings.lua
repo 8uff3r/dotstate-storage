@@ -140,7 +140,7 @@ local binds = {
     { mainMod .. " + Escape", "Focus previous workspace", hl.dsp.focus({ workspace = "previous" }) },
 
     { mainMod .. " + X",      "Toggle floating window",   hl.dsp.window.float({ action = "toggle" }) },
-    { mainMod .. " + P",      "Toggle pseudo-tiling",     hl.dsp.window.pseudo() },
+    { mainMod .. " + P",      "Toggle pin window",        hl.dsp.window.pin() },
     { mainMod .. " + C",      "Close focused window",     hl.dsp.window.close() },
     { mainMod .. " + F",      "Toggle full screen",       hl.dsp.window.fullscreen({ mode = "fullscreen" }) },
     { mainMod .. " + D",      "Toggle maximized",         hl.dsp.window.fullscreen({ mode = "maximized" }) },
@@ -322,3 +322,7 @@ o.bind("SUPER + SHIFT + F", "File manager", { launch = 'flea --gui' })
 hl.unbind("SUPER + ALT + SHIFT + F")
 o.bind("SUPER + ALT + SHIFT + F", "File manager (cwd)", { launch = 'flea --gui "$(omarchy-cmd-terminal-cwd)"' })
 -- flea --default: end.
+
+-- flea --picker: begin. Written by `flea --picker`; `flea --picker off` removes the block whole.
+o.window("com.thisisgm.flea.picker", { tag = "+floating-window" })
+-- flea --picker: end.
